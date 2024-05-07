@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --bg-color: #1E1E1E;           /* Dark background */
+    --primary-text-color: #D4D4D4; /* White text color */
+    --accent-color: #29D398;       /* Electric blue accent */
+    --secondary-text-color: #ABB2BF; /* Secondary text color for less emphasis */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.secondary-text {
+    color: var(--secondary-text-color);
+}
