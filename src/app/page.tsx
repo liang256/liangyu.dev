@@ -1,30 +1,15 @@
-import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
-import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
-import { getAllPosts } from "@/lib/api";
+import React from 'react';
+import { ProjectCard } from '@/app/_components/project-card';
+import { Project } from '@/interfaces/project';
+import Container from './_components/container';
+import { NavBar } from './_components/nav-bar';
+import Projects from './projects/page';
 
-export default function Index() {
-  const allPosts = getAllPosts();
-
-  const heroPost = allPosts[0];
-
-  const morePosts = allPosts.slice(1);
-
+const ProjectsPage: React.FC = () => {
   return (
-    <main>
-      <Container>
-        <Intro />
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container>
-    </main>
+    <Projects/>
   );
-}
+};
+
+export default ProjectsPage;
+
