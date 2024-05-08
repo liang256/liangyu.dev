@@ -4,6 +4,7 @@ import fs from "fs";
 import { join } from "path";
 import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/app/_components/post-body";
+import Script from "next/script";
 
 
 export default async function AboutPage() {
@@ -21,8 +22,8 @@ export default async function AboutPage() {
                     frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" 
                     allowFullScreen>
                 </iframe>
+                <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
             </div>
-            <script src="https://player.vimeo.com/api/player.js"></script>
             <PostBody content={markdownContent}/>
         </Container>
     );
