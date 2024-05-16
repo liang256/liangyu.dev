@@ -54,6 +54,17 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+
+        <meta property="og:title" content="Liangyu | Developer" />
+        <meta property="og:description" content="Welcome to Liangyu Chen's personal website, where you can explore his innovative projects, insightful blog posts, and professional journey in software development. Dive into a world of creativity and technical expertise." />
+        <meta property="og:image" content="/og.png" />
+        <meta property="og:url" content="https://liangyu.dev" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="Liangyu's website" />
+        <meta name="twitter:title" content="Liangyu | Developer" />
+        <meta name="twitter:description" content="Welcome to Liangyu Chen's personal website, where you can explore his innovative projects, insightful blog posts, and professional journey in software development. Dive into a world of creativity and technical expertise." />
+        <meta name="twitter:image" content="og.png" />
       </head>
       <body className={inter.className}>
         <div className="min-h-screen">{children}</div>
