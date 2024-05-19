@@ -116,6 +116,18 @@ export const projectsData: Project[] = [
       slug: 'bike-sharing',
       published: true,
       link: "https://github.com/liang256/blend-mesh-deformer"
+    },
+    {
+      id: '10',
+      title: 'emoji-picker',
+      description: 'This project is an Emoji Website built with Next.js and Tailwind CSS. Users can explore various emojis by category and copy them to the clipboard with a single click.',
+      date: '2024-05-18',
+      tags: ['Next.js', 'Tailwind CSS', 'React'],
+      views: 300,
+      type: 'normal',
+      slug: 'bike-sharing',
+      published: true,
+      link: "https://emoji.liangyu.dev"
     }
   ];
   
