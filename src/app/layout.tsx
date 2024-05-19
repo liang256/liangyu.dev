@@ -66,6 +66,7 @@ export default function RootLayout({
         <meta name="twitter:description" content="Welcome to Liangyu Chen's personal website, where you can explore his innovative projects, insightful blog posts, and professional journey in software development. Dive into a world of creativity and technical expertise." />
         <meta name="twitter:image" content="og.png" />
         {/* Google AdSence */}
+        <meta name="google-adsense-account" content="ca-pub-3438250780938861"></meta>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3438250780938861"
      crossOrigin="anonymous"></script>
       </head>
