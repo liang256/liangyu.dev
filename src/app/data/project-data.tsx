@@ -119,15 +119,27 @@ export const projectsData: Project[] = [
     },
     {
       id: '10',
-      title: 'emoji-picker',
+      title: 'Emoji Picker',
       description: 'This project is an Emoji Website built with Next.js and Tailwind CSS. Users can explore various emojis by category and copy them to the clipboard with a single click.',
       date: '2024-05-18',
       tags: ['Next.js', 'Tailwind CSS', 'React'],
       views: 300,
       type: 'normal',
-      slug: 'bike-sharing',
+      slug: 'emoji-picker',
       published: true,
       link: "https://emoji.liangyu.dev"
+    },
+    {
+      id: '11',
+      title: 'Instagram Viewer',
+      description: 'This project is an Instagram Viewer built with Next.js and Tailwind CSS. Users can view Instagram posts and stories without logging in.',
+      date: '2024-05-25',
+      tags: ['Next.js', 'Tailwind CSS', 'React'],
+      views: 145,
+      type: 'normal',
+      slug: 'instagram-viewer',
+      published: true,
+      link: "https://instaview.liangyu.dev"
     }
   ];
   

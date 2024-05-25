@@ -8,7 +8,7 @@ import { Eye } from "lucide-react";
 import { projectsData } from "@/app/data/project-data";
 
 export default function Projects() {
-  const featured = projectsData.find((project) => project.slug === "blind-gomoku")!;
+  const featured = projectsData.find((project) => project.slug === "instagram-viewer")!;
   const top2 = projectsData.find((project) => project.slug === "tetris")!;
   const top3 = projectsData.find((project) => project.slug === "go-tiny-raytracer")!;
   const sorted = projectsData
