@@ -10,7 +10,7 @@ export function Footer() {
           </p>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
-              href={`https://github.com/liang256`}
+              href={`https://x.com/LiangyuDev`}
               className="mx-3 font-bold hover:underline"
             >
               X
