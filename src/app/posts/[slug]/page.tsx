@@ -3,14 +3,15 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
-import Alert from "@/app/_components/alert";
 import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import Link from "next/link";
 
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
+  const otherPosts = getAllPosts().filter((p) => p.slug !== params.slug);
 
   if (!post) {
     return notFound();
@@ -31,6 +32,14 @@ export default async function Post({ params }: Params) {
           />
           <PostBody content={content} />
         </article>
+        <div className="flex">
+          {otherPosts.map((otherPost) => (
+            <Link href={`/posts/${otherPost.slug}`} key={otherPost.slug} className="mr-4">
+              <h2 className="text-xl">{otherPost.title}</h2>
+              <p className="text-gray-500">{otherPost.excerpt}</p>
+            </Link>
+          ))}
+        </div>
       </Container>
     </main>
   );
