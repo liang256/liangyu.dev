@@ -1,21 +1,21 @@
-import { getSortedPostsData } from "@/services/posts";
 import { PostPreview } from "../_components/post-preview";
+import { getAllPosts } from "@/lib/api";
+import Header from "../_components/header";
 
 export default function PostList() {
-  const posts = getSortedPostsData();
+  const posts = getAllPosts();
   return (
     <div>
-      <h1 className="text-3xl">Posts</h1>
+      <Header/>
       <div className="mt-4">
       {posts.map((post) => (
-        // <p>{JSON.stringify(post)}</p>
         <PostPreview
-          key={post.id}
+          key={post.slug}
           title={post.title}
           coverImage={post.coverImage}
           date={post.date}
           author={post.author}
-          slug={post.id}
+          slug={post.slug}
           excerpt={post.excerpt}
         />
       ))}
