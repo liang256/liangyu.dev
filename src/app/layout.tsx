@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NavBar } from "@/app/_components/nav-bar";
 import Container from "@/app/_components/container";
-
 import "./globals.css";
+import '@/app/prism-themes/prism-xonokai.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
