@@ -1,5 +1,3 @@
-import Container from "@/app/_components/container";
-import { NavBar } from "@/app/_components/nav-bar";
 import fs from "fs";
 import { join } from "path";
 import markdownToHtml from "@/lib/markdownToHtml";
@@ -13,8 +11,7 @@ export default async function AboutPage() {
     const markdownContent = await markdownToHtml(fileContents || "");
 
     return (
-        <Container>
-            <NavBar />
+        <div>
             <div style={{padding: "41.77% 0 0 0", position: "relative"}}>
                 <iframe 
                     src="https://player.vimeo.com/video/412302470?h=d0af2aa869" 
@@ -25,6 +22,6 @@ export default async function AboutPage() {
                 <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
             </div>
             <PostBody content={markdownContent}/>
-        </Container>
+        </div>
     );
 }

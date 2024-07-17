@@ -2,6 +2,8 @@ import Footer from "@/app/_components/footer";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { NavBar } from "@/app/_components/nav-bar";
+import Container from "@/app/_components/container";
 
 import "./globals.css";
 
@@ -71,7 +73,8 @@ export default function RootLayout({
      crossOrigin="anonymous"></script>
       </head>
       <body className={inter.className}>
-        <div className="min-h-screen">{children}</div>
+        <NavBar />
+          <Container><div className="min-h-screen">{children}</div></Container>
         <Footer />
       </body>
     </html>

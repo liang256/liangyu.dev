@@ -10,11 +10,11 @@ export function NavBar() {
             <span>Projects</span>
           </Link>
         </li>
-        {/* <li>
+        <li>
           <Link href="/posts">
             <span>Blog</span>
           </Link>
-        </li> */}
+        </li>
         <li>
           <Link href="/about">
             <span>About</span>

@@ -1,6 +1,4 @@
 import React from 'react';
-import Container from '@/app/_components/container';
-import { NavBar } from '@/app/_components/nav-bar';
 import { Card } from '../_components/card';
 import Link from "next/link";
 import { Article } from './article';
@@ -21,8 +19,7 @@ export default function Projects() {
     );
 
   return (
-    <Container>
-      <NavBar />
+    <div>
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           <Card>
             <Link href={featured.link}>
@@ -104,6 +101,6 @@ export default function Projects() {
               ))}
           </div>
         </div>
-    </Container>
+    </div>
   );
 }
