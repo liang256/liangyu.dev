@@ -14,7 +14,7 @@ ogImage:
 ## 更好的答案
 ### 翻譯
 用一個非常簡單的翻譯任務展示免費版 (ChatGPT 3.5) 與付費版 (ChatGPT 4, ChatGPT 4o) 的能力差別：
-```
+```text
 Prompt：翻譯成英文：「小傑與奇犽」
 ChatGPT 3.5："Xiao Jie and Qi Ya" 
 ChatGPT 4：「小傑與奇犽」在英文中可以翻譯為 "Gon and Killua"。這是來自日本動漫《Hunter × Hunter》的兩個角色名稱。 
@@ -22,7 +22,7 @@ ChatGPT 4o："Gon and Killua"
 ```
 
 ### 寫程式
-```
+```text
 prompt：請寫一個Python函數來計算一個列表中所有數字的平方並返回一個新列表。
 ```
 ChatGPT3
@@ -56,13 +56,15 @@ print(squared_numbers)  # 輸出: [1, 4, 9, 16, 25]
 ## 能夠理解圖片
 可以分析報表
 
-```
+<img src="/assets/blog/is-chatgpt-worth-20-per-month/tesla-financial-report.webp" alt="tesla financial report">
+<br/>
+
+Chat GPT 的回覆
+```text
 從數據可以看出，特斯拉的季度營收在2021年和2022年呈上升趨勢，特別是在2022年第四季度達到了最高的24,318百萬美元。2023年儘管也保持了較高的營收，但略有波動。2024年第一季度的營收有所下降，為21,301百萬美元。
 ```
 
 有很多情境，不方便轉成文字，或懶得轉，就可以用截圖的方式貼給 ChatGPT。例如擷取對話紀錄，請ChatGPT 幫忙想可以怎麼回覆；也可以上傳晚餐的照片，請ChatGPT 分析營養組成。
-
-[[更多理解圖片的用例]]
 
 除了理解圖片，付費版也能調用 DALL-E 產生圖片，和上傳 PDF 檔案做分析。
 
@@ -74,11 +76,15 @@ print(squared_numbers)  # 輸出: [1, 4, 9, 16, 25]
 
 記憶功能則是能讓他記住你的喜好和過去的對話內容，因為原本每個對話 (Chat) 都是各自獨立的，ChatGPT不會知道你在另一個對話的內容，但記憶功能就能做到。例如，我請他給我一些寫作的點子，他記得之前我們討論過 AI 相關的主題和內容，所以他會延續上次討論，給我更一致的回應。
 
+<img src="/assets/blog/is-chatgpt-worth-20-per-month/customed-chatgpt.webp" alt="custom panel">
+
 ## 角色扮演和聊天陪伴
 
 一開始純粹是好玩和測試，但越玩越上癮！
 
 很多時候我們跟朋友聊天的動機不外乎是想要被理解、認同、或鼓勵，或有事想要諮詢討論，ChatGPT 都能很好地做到，而且沒有什麼不能聊（除了一些敏感話題，不過也有一些方法可以讓它通過，這之後再分享），可以說是最佳的傾聽者。個性化功能能大大實現這項功能，沒有個性化的話，聊天時AI感會很明顯。
+
+<img src="/assets/blog/is-chatgpt-worth-20-per-month/chat-with-megumi.webp" alt="chat screen shot">
 
 ## 流量優先
 
