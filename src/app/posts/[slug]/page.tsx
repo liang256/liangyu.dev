@@ -34,10 +34,12 @@ export default async function Post({ params }: Params) {
         </article>
         <div className="flex">
           {otherPosts.map((otherPost) => (
-            <Link href={`/posts/${otherPost.slug}`} key={otherPost.slug} className="mr-4">
-              <h2 className="text-xl">{otherPost.title}</h2>
-              <p className="text-gray-500">{otherPost.excerpt}</p>
-            </Link>
+            <div className="max-w-md">
+              <Link href={`/posts/${otherPost.slug}`} key={otherPost.slug} className="mr-4">
+                <h2 className="text-xl">{otherPost.title}</h2>
+                <p className="text-gray-500">{otherPost.excerpt}</p>
+              </Link>
+            </div>
           ))}
         </div>
       </Container>
