@@ -2,7 +2,7 @@
 title: "ChatGPT Plus 的好處：一個月20美金值不值得？"
 excerpt: "如果你覺得 ChatGPT Plus 一個月20美金太貴，或正在猶豫要不要訂閱，哪你很適合繼續往下看。"
 coverImage: "/assets/blog/is-chatgpt-worth-20-per-month/cover.jpg"
-date: "2024-07-17T12:35:07.322Z"
+date: "2024-06-17T12:35:07.322Z"
 author:
   name: Liang
   picture: "/assets/blog/authors/jj.jpeg"
