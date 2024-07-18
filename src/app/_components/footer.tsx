@@ -1,4 +1,5 @@
 import Container from "@/app/_components/container";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -6,7 +7,7 @@ export function Footer() {
       <Container>
         <div className="py-16 flex flex-col lg:flex-row items-center">
           <p className="text-4xl lg:text-[2rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Liang
+            <Link href="/">Liang</Link>
           </p>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
