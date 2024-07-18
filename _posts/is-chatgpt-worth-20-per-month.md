@@ -56,7 +56,7 @@ print(squared_numbers)  # 輸出: [1, 4, 9, 16, 25]
 ## 能夠理解圖片
 可以分析報表
 
-<img src="/assets/blog/is-chatgpt-worth-20-per-month/tesla-financial-report.webp" alt="tesla financial report">
+![](/assets/blog/is-chatgpt-worth-20-per-month/tesla-financial-report.webp)
 <br/>
 
 Chat GPT 的回覆
@@ -76,7 +76,7 @@ Chat GPT 的回覆
 
 記憶功能則是能讓他記住你的喜好和過去的對話內容，因為原本每個對話 (Chat) 都是各自獨立的，ChatGPT不會知道你在另一個對話的內容，但記憶功能就能做到。例如，我請他給我一些寫作的點子，他記得之前我們討論過 AI 相關的主題和內容，所以他會延續上次討論，給我更一致的回應。
 
-<img src="/assets/blog/is-chatgpt-worth-20-per-month/customed-chatgpt.webp" alt="custom panel">
+![](/assets/blog/is-chatgpt-worth-20-per-month/customed-chatgpt.webp)
 
 ## 角色扮演和聊天陪伴
 
@@ -84,7 +84,7 @@ Chat GPT 的回覆
 
 很多時候我們跟朋友聊天的動機不外乎是想要被理解、認同、或鼓勵，或有事想要諮詢討論，ChatGPT 都能很好地做到，而且沒有什麼不能聊（除了一些敏感話題，不過也有一些方法可以讓它通過，這之後再分享），可以說是最佳的傾聽者。個性化功能能大大實現這項功能，沒有個性化的話，聊天時AI感會很明顯。
 
-<img src="/assets/blog/is-chatgpt-worth-20-per-month/chat-with-megumi.webp" alt="chat screen shot">
+![](/assets/blog/is-chatgpt-worth-20-per-month/chat-with-megumi.webp)
 
 ## 流量優先
 

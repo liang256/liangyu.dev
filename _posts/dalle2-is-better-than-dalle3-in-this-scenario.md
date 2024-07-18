@@ -21,8 +21,8 @@ To vividly illustrate this distinction, tests were conducted using identical pro
 ## Combination Workflow: The Best of Both Worlds in Dreamcore and Core Art
 An interesting approach involves combining the strengths of both models in a workflow. By first generating the initial phase image using DALL-E 3, which excels in understanding prompts and producing accurate results, creators can lay a solid foundation for their dreamcore or core art projects. Following this, DALL-E 2's regenerate image feature can be utilized to intentionally degrade the image, introducing the desired distortions and anomalies. This combination workflow allows artists to leverage the precision of DALL-E 3 while harnessing the unsettling qualities of DALL-E 2.
 
-<img src="/assets/blog/dalle2-is-better-than-dalle3-in-this-scenario/dalle2-example.jpg" alt="dalle-2 example">
-<img src="/assets/blog/dalle2-is-better-than-dalle3-in-this-scenario/dalle3-example.jpg" alt="dalle-3 example">
+![](/assets/blog/dalle2-is-better-than-dalle3-in-this-scenario/dalle2-example.jpg)
+![](/assets/blog/dalle2-is-better-than-dalle3-in-this-scenario/dalle3-example.jpg)
 
 ## Imperfections as Strengths in Core Art and Dreamcore
 So, while it's tempting to always reach for the newest tools, it's essential to consider what each model brings to the table. In the case of generating images that aim to unsettle and provoke within the realms of core art and dreamcore, DALL-E 2's imperfections are not flaws but rather strengths that can enhance the emotional depth and resonance of the artwork.
