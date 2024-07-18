@@ -6,7 +6,7 @@ export function NavBar() {
       <nav>
         <ul className="flex justify-center space-x-4">
           <li>
-            <Link href="/">
+            <Link href="/projects">
               <span>Projects</span>
             </Link>
           </li>
