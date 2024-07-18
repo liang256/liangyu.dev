@@ -1,10 +1,9 @@
 import React from 'react';
-import Projects from './projects/page';
+import { redirect } from 'next/navigation'
+// import { revalidatePath } from 'next/cache'
 
 const ProjectsPage: React.FC = () => {
-  return (
-    <Projects/>
-  );
+  return redirect("/posts")
 };
 
 export default ProjectsPage;
