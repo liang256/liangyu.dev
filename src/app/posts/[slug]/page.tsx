@@ -32,7 +32,7 @@ export default async function Post({ params }: Params) {
           />
           <PostBody content={content} />
         </article>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {otherPosts.map((otherPost) => (
             <div key={otherPost.slug}>
               <Link href={`/posts/${otherPost.slug}`} key={otherPost.slug} className="mr-4">
