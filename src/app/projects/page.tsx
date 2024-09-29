@@ -6,7 +6,7 @@ import { Eye } from "lucide-react";
 import { projectsData } from "@/app/data/project-data";
 
 export default function Projects() {
-  const featured = projectsData.find((project) => project.slug === "instagram-viewer")!;
+  const featured = projectsData.find((project) => project.slug === "prompt-swim")!;
   const top2 = projectsData.find((project) => project.slug === "tetris")!;
   const top3 = projectsData.find((project) => project.slug === "go-tiny-raytracer")!;
   const sorted = projectsData
@@ -50,14 +50,15 @@ export default function Projects() {
                 >
                   {featured.title}
                 </h2>
-                <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-                  {featured.description}
+                <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300"
+                dangerouslySetInnerHTML={{ __html: featured.description.replace(/\n/g, "<br/>") }}>
+                  {}
                 </p>
-                <div className="absolute bottom-4 md:bottom-8">
+                {/* <div className="absolute bottom-4 md:bottom-8">
                   <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
                     Read more <span aria-hidden="true">&rarr;</span>
                   </p>
-                </div>
+                </div> */}
               </article>
             </Link>
           </Card>
