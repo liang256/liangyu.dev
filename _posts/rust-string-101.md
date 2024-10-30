@@ -5,7 +5,7 @@ coverImage: "/assets/blog/rust-string-101/cover.jpg"
 date: "2022-04-13T23:28:05"
 author:
   name: Liang
-  picture: "/assets/blog/authors/jj.jpeg"
+  picture: "/assets/blog/authors/cat_coffee.png"
 ogImage:
   url: "/assets/blog/rust-string-101/cover.jpg"
 ---

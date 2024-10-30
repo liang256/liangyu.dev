@@ -5,7 +5,7 @@ coverImage: "/assets/blog/is-chatgpt-worth-20-per-month/cover.jpg"
 date: "2024-06-17T12:35:07.322Z"
 author:
   name: Liang
-  picture: "/assets/blog/authors/jj.jpeg"
+  picture: "/assets/blog/authors/cat_coffee.png"
 ogImage:
   url: "/assets/blog/is-chatgpt-worth-20-per-month/cover.jpg"
 ---

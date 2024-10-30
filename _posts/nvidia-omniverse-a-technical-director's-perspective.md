@@ -5,7 +5,7 @@ coverImage: "/assets/blog/nvidia-omniverse-a-technical-director's-perspective/co
 date: "2024-10-30T12:28:05"
 author:
   name: Liang
-  picture: "/assets/blog/authors/jj.jpeg"
+  picture: "/assets/blog/authors/cat_coffee.png"
 ogImage:
   url: "/assets/blog/nvidia-omniverse-a-technical-director's-perspective/cover.png"
 ---

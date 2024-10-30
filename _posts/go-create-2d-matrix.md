@@ -5,7 +5,7 @@ excerpt: ""
 coverImage: "/assets/blog/go-create-2d-matrix/cover.jpg"
 author:
   name: Liang
-  picture: "/assets/blog/authors/jj.jpeg"
+  picture: "/assets/blog/authors/cat_coffee.png"
 ogImage:
   url: "/assets/blog/go-create-2d-matrix/cover.jpg"
 ---

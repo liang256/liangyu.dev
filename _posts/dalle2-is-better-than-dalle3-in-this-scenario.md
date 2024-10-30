@@ -5,7 +5,7 @@ coverImage: "/assets/blog/dalle2-is-better-than-dalle3-in-this-scenario/cover.pn
 date: "2024-06-20T12:35:07.322Z"
 author:
   name: Liang
-  picture: "/assets/blog/authors/jj.jpeg"
+  picture: "/assets/blog/authors/cat_coffee.png"
 ogImage:
   url: "/assets/blog/dalle2-is-better-than-dalle3-in-this-scenario/cover.png"
 ---
