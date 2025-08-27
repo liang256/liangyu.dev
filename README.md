@@ -43,6 +43,7 @@ npm start
 ### Other Commands
 
 - `npm run lint` - Run ESLint to check code quality
+- `npm run new-post` - Create a new blog post with interactive prompts
 
 ## Features
 
@@ -55,6 +56,28 @@ npm start
 
 ## Content Management
 
+### Creating New Blog Posts
+
+Use the interactive post generator:
+
+```bash
+npm run new-post
+```
+
+This will prompt you for:
+- Post title (required)
+- Post excerpt (optional)
+- Author name (defaults to "Liang")
+
+The script automatically:
+- Generates a URL-friendly slug from the title
+- Creates the markdown file in `/_posts/`
+- Sets up the assets directory in `/public/assets/blog/[slug]/`
+- Includes proper front matter with all required fields
+- Adds a placeholder README for cover images
+
+### Manual Post Creation
+
 - Blog posts are stored in `/_posts` as Markdown files
-- Add a new Markdown file to create a new blog post
 - Front matter is used for post metadata (title, date, author, etc.)
+- Cover images should be placed in `/public/assets/blog/[slug]/cover.jpg`
