@@ -9,6 +9,31 @@
   @apply my-6;
 }
 
+.markdown ul {
+  @apply list-disc pl-6;
+}
+
+.markdown ol {
+  @apply list-decimal pl-6;
+}
+
+.markdown li {
+  @apply my-2;
+}
+
+.markdown ul ul {
+  @apply list-disc pl-4 mt-2;
+}
+
+.markdown ol ol {
+  @apply list-decimal pl-4 mt-2;
+}
+
+.markdown ul ol,
+.markdown ol ul {
+  @apply pl-4 mt-2;
+}
+
 .markdown h1 {
   @apply text-4xl mt-16 mb-6 leading-tight;
 }
