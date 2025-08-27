@@ -1,13 +1,13 @@
 ---
 title: "Heavy Rendering vs Light Rendering: Choosing Smarter, Not Harder"
 excerpt: 'When people ask “Which renderer is best — Maya, Blender, or Unreal?”, it’s a bit like asking “Which programming language is best — Python, C++, or Java?”'
-coverImage: "/assets/blog/dalle2-is-better-than-dalle3-in-this-scenario/cover.png"
+coverImage: "/assets/blog/rendering/cover.png"
 date: "2025-08-26T12:35:07.322Z"
 author:
   name: Liang
   picture: "/assets/blog/authors/cat_coffee.png"
 ogImage:
-  url: "/assets/blog/dalle2-is-better-than-dalle3-in-this-scenario/cover.png"
+  url: "/assets/blog/rendering/cover.png"
 ---
 When people ask “Which renderer is best — Maya, Blender, or Unreal?”, it’s a bit like asking “Which programming language is best — Python, C++, or Java?”
 
@@ -27,7 +27,7 @@ Light Rendering
 * Extremely fast, often near real-time.
 * Examples: Maya Software, Blender Eevee, Unreal Engine real-time shaders.
 
-![](/assets/blog/rendering/splited_sphere.png)
+![Split image of two spheres — left with realistic reflections and caustics (Heavy), right with flat cartoon shading (Light).](/assets/blog/rendering/splited_sphere.png)
 
 ## Speed Comes From Algorithms, Not Platforms
 
@@ -38,7 +38,7 @@ But the truth is:
 * Light rendering will always be faster than heavy rendering, regardless of engine or DCC.
 * Maya, Blender, and Unreal all support both heavy and light rendering flows.
 
-[Image idea: A group of cats at computers — one cat sweating with complex raytracing math, another cat relaxing with flat color output.]
+![A group of cats at computers — one cat sweating with complex raytracing math, another cat relaxing with flat color output.](/assets/blog/rendering/heavy_vs_light.png)
 
 ## Compositing Unlocks Flexibility
 
@@ -50,7 +50,7 @@ Another misconception is that rendering is a one-tool decision. In practice, wor
 
 This avoids forcing the 3D renderer to “do everything,” keeping pipelines efficient.
 
-[Image idea: Pipeline diagram — UE → Blender → After Effects/Nuke, arrows showing passes combined.]
+![Pipeline diagram — UE → Blender → After Effects/Nuke, arrows showing passes combined.](/assets/blog/rendering/pipeline.png)
 
 
 ## Key Takeaways
