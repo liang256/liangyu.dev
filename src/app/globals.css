@@ -16,10 +16,10 @@
     --text-tertiary: #71717a;
     --text-muted: #52525b;
     
-    --accent-primary: #3b82f6;
-    --accent-secondary: #06b6d4;
-    --accent-tertiary: #10b981;
-    --accent-gradient: linear-gradient(135deg, #3b82f6, #06b6d4);
+    --accent-primary: #29D398;
+    --accent-secondary: #1EBB85;
+    --accent-tertiary: #0CA778;
+    --accent-gradient: linear-gradient(135deg, #29D398, #1EBB85);
     
     --border-primary: #27272a;
     --border-secondary: #3f3f46;
