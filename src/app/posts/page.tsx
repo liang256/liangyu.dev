@@ -5,20 +5,20 @@ import Header from "../_components/header";
 export default function PostList() {
   const posts = getAllPosts();
   return (
-    <div>
+    <div className="space-y-12">
       <Header/>
-      <div className="mt-4">
-      {posts.map((post) => (
-        <PostPreview
-          key={post.slug}
-          title={post.title}
-          coverImage={post.coverImage}
-          date={post.date}
-          author={post.author}
-          slug={post.slug}
-          excerpt={post.excerpt}
-        />
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        {posts.map((post) => (
+          <PostPreview
+            key={post.slug}
+            title={post.title}
+            coverImage={post.coverImage}
+            date={post.date}
+            author={post.author}
+            slug={post.slug}
+            excerpt={post.excerpt}
+          />
+        ))}
       </div>
     </div>
   );
