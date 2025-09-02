@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NavBar } from "@/app/_components/nav-bar";
 import Container from "@/app/_components/container";
+import { ThemeProvider } from "@/app/contexts/theme-context";
 import "./globals.css";
 import '@/app/prism-themes/prism-xonokai.css';
 
@@ -73,9 +74,11 @@ export default function RootLayout({
      crossOrigin="anonymous"></script>
       </head>
       <body className={inter.className}>
-        <NavBar />
+        <ThemeProvider>
+          <NavBar />
           <Container><div className="min-h-screen">{children}</div></Container>
-        <Footer />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

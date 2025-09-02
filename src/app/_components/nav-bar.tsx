@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import ThemeToggle from "./theme-toggle";
 
 export function NavBar() {
   const pathname = usePathname();
@@ -16,8 +17,9 @@ export function NavBar() {
   return (
     <div className="my-12 flex justify-center">
       <nav className="glass rounded-full px-6 py-4 backdrop-blur-md">
-        <ul className="flex items-center space-x-8">
-          {navigation.map((item) => {
+        <div className="flex items-center justify-between">
+          <ul className="flex items-center space-x-8">
+            {navigation.map((item) => {
             const isActive = pathname === item.href || 
               (item.href === "/posts" && pathname.startsWith("/posts"));
             
@@ -53,7 +55,11 @@ export function NavBar() {
               </li>
             );
           })}
-        </ul>
+          </ul>
+          <div className="ml-8">
+            <ThemeToggle />
+          </div>
+        </div>
       </nav>
     </div>
   );
