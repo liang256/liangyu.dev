@@ -43,7 +43,7 @@ export function PostGridItem({
           
           <div className="space-y-3 flex-1">
             <div className="flex items-start justify-between gap-3">
-              <h3 className="text-lg font-bold leading-tight text-white group-hover:text-gradient transition-all duration-300 line-clamp-2">
+              <h3 className="text-lg font-bold leading-tight group-hover:text-gradient transition-all duration-300 line-clamp-2">
                 {title}
               </h3>
               <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0 mt-0.5" />

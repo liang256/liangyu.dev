@@ -45,7 +45,7 @@ export function PostPreview({
           {/* Content */}
           <div className="flex-1 flex flex-col space-y-4">
             <div className="flex items-start justify-between gap-4">
-              <h3 className="text-xl font-bold leading-tight text-white group-hover:text-gradient transition-all duration-300 flex-1">
+              <h3 className="text-xl font-bold leading-tight group-hover:text-gradient transition-all duration-300 flex-1">
                 {title}
               </h3>
               <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0 mt-0.5" />
