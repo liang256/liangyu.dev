@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import React from 'react';
 import { Card } from '../_components/card';
 import Link from "next/link";
 import { Article } from './article';
 import { Eye } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Open source and personal projects by Liangyu Chen.",
+  openGraph: {
+    title: "Projects | Liangyu Chen",
+    description: "Open source and personal projects by Liangyu Chen.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Liangyu Chen",
+    description: "Open source and personal projects by Liangyu Chen.",
+  },
+};
 import { projectsData } from "@/app/data/project-data";
 
 export default function Projects() {
