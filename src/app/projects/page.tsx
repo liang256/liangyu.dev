@@ -90,34 +90,14 @@ export default function Projects() {
         </div>
         <div className="hidden my-6 w-full h-px md:block bg-zinc-800" />
 
-        <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-          <div className="grid grid-cols-1 gap-4">
-            {sorted
-              .filter((_, i) => i % 3 === 0)
-              .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project}/>
-                </Card>
-              ))}
-          </div>
-          <div className="grid grid-cols-1 gap-4">
-            {sorted
-              .filter((_, i) => i % 3 === 1)
-              .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project}/>
-                </Card>
-              ))}
-          </div>
-          <div className="grid grid-cols-1 gap-4">
-            {sorted
-              .filter((_, i) => i % 3 === 2)
-              .map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project}/>
-                </Card>
-              ))}
-          </div>
+        <div className="columns-1 md:columns-3 gap-4 mx-auto lg:mx-0">
+          {sorted.map((project) => (
+            <div key={project.slug} className="break-inside-avoid mb-4">
+              <Card>
+                <Article project={project}/>
+              </Card>
+            </div>
+          ))}
         </div>
     </div>
   );
