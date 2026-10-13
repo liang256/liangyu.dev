@@ -12,6 +12,9 @@ const nextConfig = {
     // Cache optimized images for 60 days
     minimumCacheTTL: 60 * 60 * 24 * 60,
   },
+  async redirects() {
+    return [{ source: "/projects", destination: "/work", permanent: true }];
+  },
 };
 
 export default nextConfig;
