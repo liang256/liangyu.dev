@@ -1,14 +1,15 @@
 import Footer from "@/app/_components/footer";
 import { HOME_OG_IMAGE_URL, SITE_URL } from "@/lib/constants";
+import { THEME_INIT_SCRIPT } from "@/lib/theme";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import { NavBar } from "@/app/_components/nav-bar";
-import Container from "@/app/_components/container";
 import { ThemeProvider } from "@/app/contexts/theme-context";
 import "./globals.css";
-import '@/app/prism-themes/prism-xonokai.css';
+import "@/app/prism-themes/prism-mono.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const sans = Hanken_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-sans" });
+const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Liangyu Chen",
   },
   description:
-    "Personal website of Liangyu Chen: software engineer, writer, and creator based in Montreal. Focuses on Python, JavaScript, Go, visual art, and more.",
+    "Personal website of Liangyu Chen: software engineer, writer, and creator. Focuses on Python, JavaScript, Go, visual art, and more.",
   openGraph: {
     type: "website",
     url: SITE_URL,
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Liangyu Chen",
     description:
-      "Personal website of Liangyu Chen: software engineer, writer, and creator based in Montreal.",
+      "Personal website of Liangyu Chen: software engineer, writer, and creator.",
     images: [HOME_OG_IMAGE_URL],
   },
 };
@@ -57,8 +58,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
@@ -82,12 +84,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className}>
+      <body>
         <ThemeProvider>
           <NavBar />
-          <Container>
-            <div className="min-h-screen">{children}</div>
-          </Container>
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

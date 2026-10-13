@@ -1,0 +1,21 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--fg);
+  background: none;
+  white-space: pre;
+  tab-size: 2;
+}
+pre[class*="language-"] {
+  padding: 1.25rem;
+  overflow: auto;
+  border: 1px solid var(--line);
+}
+.token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--fg-subtle); font-style: italic; }
+.token.punctuation, .token.operator { color: var(--fg-muted); }
+.token.keyword, .token.selector, .token.important, .token.atrule { font-weight: 600; }
+.token.string, .token.char, .token.attr-value, .token.regex { color: var(--fg-muted); }
+.token.function, .token.class-name { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.token.number, .token.boolean, .token.constant { color: var(--fg); }
