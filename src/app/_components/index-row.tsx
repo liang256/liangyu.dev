@@ -17,11 +17,12 @@ export function IndexRow({ href, year, title, category, meta, hoverLabel, cursor
   const body = (
     <>
       <span className="label">{year}</span>
-      <span className="relative block h-[1.15em] overflow-hidden text-xl font-medium tracking-[-0.03em] md:text-[1.75rem]">
-        <span className="block transition-transform duration-500 ease-[cubic-bezier(.2,.8,.2,1)] group-hover:-translate-y-full">
+      {/* Mobile: full title wraps (no hover). Desktop: one truncated line that flips to hoverLabel. */}
+      <span className="relative block min-w-0 text-xl font-medium leading-[1.15] tracking-[-0.03em] md:h-[1.15em] md:overflow-hidden md:text-[1.75rem]">
+        <span className="block transition-transform duration-500 ease-[cubic-bezier(.2,.8,.2,1)] md:truncate md:group-hover:-translate-y-full">
           {title}
         </span>
-        <span className="absolute left-0 top-full block transition-transform duration-500 ease-[cubic-bezier(.2,.8,.2,1)] group-hover:-translate-y-full">
+        <span className="absolute left-0 top-full hidden w-full truncate transition-transform duration-500 ease-[cubic-bezier(.2,.8,.2,1)] md:block md:group-hover:-translate-y-full">
           {hoverLabel}
         </span>
       </span>
