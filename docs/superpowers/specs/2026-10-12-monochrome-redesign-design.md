@@ -21,10 +21,10 @@
 - Dark and light themes kept; light is an exact black/white inversion; default follows system.
 - Scrollbar hidden on the home page only.
 - Contact email: `liangyu.chen.dev@gmail.com`.
+- No living location shown anywhere. Remove "based in Montreal" / "Montreal, Canada" from `layout.tsx` metadata (description, twitter), `about/page.tsx` metadata, and the footer; descriptions otherwise keep their wording.
 
 **Assumptions (correct at review if wrong):**
 
-- Location shown as "based in montréal" (already in site metadata).
 - Hero headline: "tools for the creative pipeline." and About headline "where technical depth meets creative production." — editable copy.
 - Focus blurbs condensed from `_about/about.md`.
 - All existing `/posts/[slug]` URLs remain unchanged; `/projects` permanently redirects to `/work`.
@@ -124,7 +124,7 @@ Removed: all `--accent-*`, `--bg-secondary/tertiary/accent`, `--text-*`, `--bord
 ### `/` Home (new; replaces redirect to `/posts`)
 
 1. Loader (first visit per session).
-2. Intro: `( pipeline · ai video · backend )`; hero "tools for the / creative pipeline." with line reveal and slight parallax; bottom rule with one-line positioning statement left, "based in montréal / scroll ↓" right.
+2. Intro: `( pipeline · ai video · backend )`; hero "tools for the / creative pipeline." with line reveal and slight parallax; bottom rule with one-line positioning statement left, "scroll ↓" right.
 3. `( focus ) 04`: one large statement paragraph; four columns `( 01 )`–`( 04 )` (pipeline tooling, ai video, backend, creative tech) with one-line blurbs; one parallax image (uses an existing blog cover asset).
 4. `( writing ) (N) all posts →`: latest 4 posts as `IndexRow`s with `data-cursor="read"`.
 5. `( contact )`: "let's talk." reveal; pills: email (mailto), github ↗, rss.
@@ -176,6 +176,7 @@ No test framework exists; none is added for this styling work.
 - Browser pass on every page: dark and light, 375px and 1440px, reduced motion on and off.
 - `/projects` returns a 308 redirect to `/work`.
 - Sitemap lists `/`, `/work`, `/posts`, `/about`, and all posts.
+- `grep -ri montreal src` returns nothing.
 
 ## Housekeeping
 
