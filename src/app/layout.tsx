@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import { NavBar } from "@/app/_components/nav-bar";
 import { ThemeProvider } from "@/app/contexts/theme-context";
+import { SmoothScroll } from "@/app/_components/motion/smooth-scroll";
+import { Cursor } from "@/app/_components/motion/cursor";
 import "./globals.css";
 import "@/app/prism-themes/prism-mono.css";
 
@@ -86,9 +88,11 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
+          <SmoothScroll />
           <NavBar />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <Cursor />
         </ThemeProvider>
       </body>
     </html>
