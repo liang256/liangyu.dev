@@ -14,7 +14,7 @@ export function Marquee({ text, className = "" }: Props) {
     () => {
       if (!motionEnabled()) return;
       const tween = primeReversibleLoop(
-        gsap.to(track.current, { xPercent: -50, duration: 30, ease: "none", repeat: -1 }),
+        gsap.to(track.current, { xPercent: -50, duration: 120, ease: "none", repeat: -1 }),
       );
       ScrollTrigger.create({
         onUpdate: (self) => gsap.to(tween, { timeScale: self.direction, duration: 0.4, overwrite: true }),
