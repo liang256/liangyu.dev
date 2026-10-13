@@ -21,7 +21,7 @@
 - Dark and light themes kept; light is an exact black/white inversion; default follows system.
 - Scrollbar hidden on the home page only.
 - Contact email: `liangyu.chen.dev@gmail.com`.
-- No living location shown anywhere. Remove "based in Montreal" / "Montreal, Canada" from `layout.tsx` metadata (description, twitter), `about/page.tsx` metadata, and the footer; descriptions otherwise keep their wording.
+- Home hero shows "available remotely" instead of a city. No living location shown anywhere. Remove "based in Montreal" / "Montreal, Canada" from `layout.tsx` metadata (description, twitter), `about/page.tsx` metadata, and the footer; descriptions otherwise keep their wording.
 
 **Assumptions (correct at review if wrong):**
 
@@ -101,7 +101,7 @@ Removed: all `--accent-*`, `--bg-secondary/tertiary/accent`, `--text-*`, `--bord
 ### Modified
 
 - `nav-bar.tsx` — "liangyu’" left; `work` `writing` `about` `contact` + theme toggle right; sticky, transparent, `mix-blend-mode: difference`. Mobile: `menu` button opening a full-screen large-type menu. framer-motion indicator removed.
-- `footer.tsx` — large "let's talk." , email, GitHub, RSS pills, `liangyu.dev` marquee, name and year.
+- `footer.tsx` — `liangyu.dev` marquee, then a small row: name, email, github, linkedin, x, year. (The large "let's talk." CTA lives only in the home contact section to avoid duplication on `/`.)
 - `post-header.tsx`, `post-title.tsx` — breadcrumb (`← writing / category`), `RevealText` title, mono meta row (date · read time · author), `ParallaxImage` cover.
 - `post-body.tsx`, `markdown-styles.module.css` — monochrome: underlined links, grayscale code, Hanken headings.
 - `theme-context.tsx` — stop returning `null` before mount. Add an inline script in `<head>` (in `layout.tsx`) that reads `localStorage.theme` or `prefers-color-scheme` and sets `data-theme` before paint. Provider always renders children.
@@ -124,10 +124,10 @@ Removed: all `--accent-*`, `--bg-secondary/tertiary/accent`, `--text-*`, `--bord
 ### `/` Home (new; replaces redirect to `/posts`)
 
 1. Loader (first visit per session).
-2. Intro: `( pipeline · ai video · backend )`; hero "tools for the / creative pipeline." with line reveal and slight parallax; bottom rule with one-line positioning statement left, "scroll ↓" right.
+2. Intro: `( pipeline · ai video · backend )`; hero "tools for the / creative pipeline." with line reveal and slight parallax; bottom rule with one-line positioning statement left, "available remotely / scroll ↓" right.
 3. `( focus ) 04`: one large statement paragraph; four columns `( 01 )`–`( 04 )` (pipeline tooling, ai video, backend, creative tech) with one-line blurbs; one parallax image (uses an existing blog cover asset).
 4. `( writing ) (N) all posts →`: latest 4 posts as `IndexRow`s with `data-cursor="read"`.
-5. `( contact )`: "let's talk." reveal; pills: email (mailto), github ↗, rss.
+5. `( contact )`: "let's talk." reveal; pills: email (mailto), github ↗, linkedin ↗. (No RSS: `/feed.xml` does not exist in the repo.)
 6. Footer.
 
 Metadata: title "Liangyu Chen", existing description.
@@ -147,10 +147,12 @@ Metadata: title "Liangyu Chen", existing description.
 ### `/posts/[slug]`
 
 - Layout per modified post components above; body at ~680px measure. URLs unchanged.
+- Existing "other posts" block becomes `( more writing )` with the next 3 posts as `IndexRow`s.
 
 ### `/about`
 
 - Large statement headline ("where technical depth meets creative production.").
+- The existing Vimeo embed (short film *Cigarette After Fight*) is kept as a `( short film )` row after the intro.
 - `_about/about.md` is split at `#` headings server-side; each section renders as a two-column row: parenthetical label (lowercased heading) left, rendered markdown right. The first "About Me" section becomes the intro paragraph under the headline.
 
 ## Data
@@ -183,6 +185,8 @@ No test framework exists; none is added for this styling work.
 - Add `.superpowers/` to `.gitignore`.
 
 ## Out of Scope
+
+- Creating an RSS feed (the existing `<link rel="alternate" href="/feed.xml">` in `<head>` is left untouched).
 
 - WebGL / 3D hero.
 - Curated selected-work section.
