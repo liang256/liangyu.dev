@@ -55,8 +55,12 @@
 html:has([data-page="home"]) { scrollbar-width: none; }
 html:has([data-page="home"])::-webkit-scrollbar { display: none; }
 
-/* Motion gating: pre-animation states exist only when the head script added html.motion */
-html.motion [data-reveal] { visibility: hidden; }
+/* Motion gating: pre-animation states exist only when the head script added html.motion.
+   The failsafe animations undo them if the JS bundle is slow or never runs; GSAP's
+   inline styles win before the delay, and the end states match what GSAP sets. */
+@keyframes failsafe-show { to { visibility: visible; } }
+@keyframes failsafe-hide { to { visibility: hidden; } }
+html.motion [data-reveal] { visibility: hidden; animation: failsafe-show 0s 2.5s forwards; }
 .loader-overlay { display: none; }
-html.loader .loader-overlay { display: flex; }
+html.loader .loader-overlay { display: flex; animation: failsafe-hide 0s 4s forwards; }
 .cursor-dot { display: none; }
