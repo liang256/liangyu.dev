@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { gsap, ScrollTrigger, useGSAP, motionEnabled } from "./gsap";
+import { primeReversibleLoop } from "@/lib/gsap-loop";
 
 type Props = { text: string; className?: string };
 
@@ -12,7 +13,9 @@ export function Marquee({ text, className = "" }: Props) {
   useGSAP(
     () => {
       if (!motionEnabled()) return;
-      const tween = gsap.to(track.current, { xPercent: -50, duration: 30, ease: "none", repeat: -1 });
+      const tween = primeReversibleLoop(
+        gsap.to(track.current, { xPercent: -50, duration: 30, ease: "none", repeat: -1 }),
+      );
       ScrollTrigger.create({
         onUpdate: (self) => gsap.to(tween, { timeScale: self.direction, duration: 0.4, overwrite: true }),
       });
