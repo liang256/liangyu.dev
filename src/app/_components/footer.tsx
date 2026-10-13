@@ -11,7 +11,7 @@ const social = [
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-line">
-      <Marquee text="pipeline tooling — ai video — houdini — backend systems — creative tech"className="display py-6 text-[clamp(3.5rem,10vw,9rem)]" />
+      <Marquee text="pipeline tooling — USD — python — 3D — ai video — backend systems — creative tech"className="display py-6 text-[clamp(3.5rem,10vw,9rem)]" />
       <Container className="flex flex-col gap-4 border-t border-line py-6 md:flex-row md:items-center md:justify-between">
         <span className="label">liangyu chen</span>
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
