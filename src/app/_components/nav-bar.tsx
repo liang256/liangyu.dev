@@ -42,7 +42,7 @@ export function NavBar() {
       {open && (
         <div className="fixed inset-0 z-40 flex flex-col justify-end gap-2 bg-bg px-4 pb-10 text-fg md:hidden">
           {links.map((l) => (
-            <Link key={l.name} href={l.href} className="display text-6xl">{l.name}</Link>
+            <Link key={l.name} href={l.href} onClick={() => setOpen(false)} className="display text-6xl">{l.name}</Link>
           ))}
           <div className="mt-6 text-sm"><ThemeToggle /></div>
         </div>
