@@ -29,6 +29,8 @@ export function Loader() {
           },
         })
         .to(root.current, { yPercent: -100, duration: 0.6, ease: "power4.inOut" });
+      // Leaving / before the timeline finishes still counts as played.
+      return done;
     },
     { scope: root },
   );
