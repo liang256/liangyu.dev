@@ -2,65 +2,51 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import ThemeToggle from "./theme-toggle";
+
+const links = [
+  { name: "work", href: "/work" },
+  { name: "writing", href: "/posts" },
+  { name: "about", href: "/about" },
+  { name: "contact", href: "mailto:liangyu.chen.dev@gmail.com" },
+];
 
 export function NavBar() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  useEffect(() => setOpen(false), [pathname]);
 
-  const navigation = [
-    { name: "Projects", href: "/projects" },
-    { name: "Blog", href: "/posts" },
-    { name: "About", href: "/about" },
-  ];
+  const isActive = (href: string) => href !== "/" && pathname.startsWith(href);
 
   return (
-    <div className="my-12 flex justify-center">
-      <nav className="glass rounded-full px-6 py-4 backdrop-blur-md">
-        <div className="flex items-center justify-between">
-          <ul className="flex items-center space-x-8">
-            {navigation.map((item) => {
-            const isActive = pathname === item.href || 
-              (item.href === "/posts" && pathname.startsWith("/posts"));
-            
-            return (
-              <li key={item.name} className="relative">
-                <Link 
-                  href={item.href}
-                  className={`
-                    relative px-4 py-2 rounded-full font-medium transition-all duration-300
-                    ${isActive 
-                      ? 'text-white' 
-                      : 'text-gray-400 hover:text-white'
-                    }
-                  `}
-                >
-                  {isActive && (
-                    <motion.div
-                      layoutId="navbar-indicator"
-                      className="absolute inset-0 rounded-full"
-                      style={{
-                        background: "var(--accent-gradient)",
-                      }}
-                      initial={false}
-                      transition={{
-                        type: "spring",
-                        stiffness: 500,
-                        damping: 30,
-                      }}
-                    />
-                  )}
-                  <span className="relative z-10">{item.name}</span>
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 text-white mix-blend-difference">
+        <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-4 py-4 text-sm md:px-8">
+          <Link href="/" className="font-semibold">liangyu’</Link>
+          <ul className="hidden items-center gap-6 md:flex">
+            {links.map((l) => (
+              <li key={l.name}>
+                <Link href={l.href} className={isActive(l.href) ? "" : "opacity-60 transition-opacity hover:opacity-100"}>
+                  {l.name}
                 </Link>
               </li>
-            );
-          })}
+            ))}
+            <li><ThemeToggle /></li>
           </ul>
-          <div className="ml-8">
-            <ThemeToggle />
-          </div>
+          <button className="md:hidden" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
+            {open ? "close" : "menu"}
+          </button>
+        </nav>
+      </header>
+      {open && (
+        <div className="fixed inset-0 z-40 flex flex-col justify-end gap-2 bg-bg px-4 pb-10 text-fg md:hidden">
+          {links.map((l) => (
+            <Link key={l.name} href={l.href} className="display text-6xl">{l.name}</Link>
+          ))}
+          <div className="mt-6 text-sm"><ThemeToggle /></div>
         </div>
-      </nav>
-    </div>
+      )}
+    </>
   );
 }
