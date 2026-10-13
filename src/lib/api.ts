@@ -2,6 +2,7 @@ import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import { readingTime } from "./reading-time";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -15,7 +16,7 @@ export function getPostBySlug(slug: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  return { ...data, slug: realSlug, content } as Post;
+  return { ...data, slug: realSlug, content, readingTime: readingTime(content) } as Post;
 }
 
 export function getAllPosts(): Post[] {

@@ -10,6 +10,7 @@ export const projectsData: Project[] = [
       views: 2201,
       type: 'hero',
       slug: 'tetris',
+      category: 'game',
       link: "https://github.com/liang256/tetris",
       published: true
     },
@@ -22,6 +23,7 @@ export const projectsData: Project[] = [
       views: 751,
       type: 'secondary',
       slug: 'blind-gomoku',
+      category: 'game',
       link: "https://github.com/liang256/blind-gomoku-server",
       published: true
     },
@@ -34,6 +36,7 @@ export const projectsData: Project[] = [
       views: 453,
       type: 'secondary',
       slug: 'go-tiny-raytracer',
+      category: 'graphics',
       published: true,
       link: "https://github.com/liang256/go-tinyraytracer"
     },
@@ -46,6 +49,7 @@ export const projectsData: Project[] = [
       views: 1206,
       type: 'normal',
       slug: 'solana-by-example',
+      category: 'docs',
       published: true,
       link: "https://liang256.github.io/solana-by-example/"
     },
@@ -62,6 +66,7 @@ export const projectsData: Project[] = [
       views: 652,
       type: 'normal',
       slug: 'crack-ats',
+      category: 'tool',
       published: true,
       link: "https://github.com/liang256/crack-ats"
     },
@@ -78,6 +83,7 @@ export const projectsData: Project[] = [
       views: 1012,
       type: 'normal',
       slug: 'enso-executer',
+      category: 'pipeline tool',
       published: true,
       link: "https://github.com/liang256/enso-executer"
     },
@@ -90,6 +96,7 @@ export const projectsData: Project[] = [
       views: 1150,
       type: 'normal',
       slug: 'into-pool',
+      category: 'ai imagery',
       published: true,
       link: "https://github.com/liang256/intopool"
     },
@@ -102,6 +109,7 @@ export const projectsData: Project[] = [
       views: 139,
       type: 'normal',
       slug: 'cigarette-after-fight',
+      category: 'short film',
       published: true,
       link: "https://vimeo.com/412302470"
     },
@@ -114,6 +122,7 @@ export const projectsData: Project[] = [
       views: 33,
       type: 'normal',
       slug: 'bike-sharing',
+      category: 'maya plugin',
       published: true,
       link: "https://github.com/liang256/blend-mesh-deformer"
     },
@@ -126,6 +135,7 @@ export const projectsData: Project[] = [
       views: 83,
       type: 'normal',
       slug: 'emoji-picker',
+      category: 'web app',
       published: true,
       link: "https://emoji.liangyu.dev"
     },
@@ -138,6 +148,7 @@ export const projectsData: Project[] = [
       views: 145,
       type: 'normal',
       slug: 'instagram-viewer',
+      category: 'web app',
       published: true,
       link: "https://instaview.liangyu.dev"
     },
@@ -150,6 +161,7 @@ export const projectsData: Project[] = [
       views: 4192,
       type: 'normal',
       slug: 'prompt-swim',
+      category: 'web app',
       published: true,
       link: "https://promptswim.com"
     },

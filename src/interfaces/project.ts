@@ -9,5 +9,6 @@ export interface Project {
   published: boolean;
   slug: string;
   link: string;
+  category?: string;
 }
   
