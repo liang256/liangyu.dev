@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import { PostPreview } from "../_components/post-preview";
+import Link from "next/link";
+import Container from "@/app/_components/container";
+import { IndexRow } from "@/app/_components/index-row";
+import { RevealText } from "@/app/_components/motion/reveal-text";
+import { ParallaxImage } from "@/app/_components/motion/parallax-image";
+import DateFormatter from "@/app/_components/date-formatter";
 import { getAllPosts } from "@/lib/api";
-import Header from "../_components/header";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -21,23 +25,40 @@ export const metadata: Metadata = {
 };
 
 export default function PostList() {
-  const posts = getAllPosts();
+  const [latest, ...rest] = getAllPosts();
+
   return (
-    <div className="space-y-12">
-      <Header />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {posts.map((post) => (
-          <PostPreview
-            key={post.slug}
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author}
-            slug={post.slug}
-            excerpt={post.excerpt}
+    <Container className="pt-28">
+      <span className="label">( writing )&nbsp;&nbsp;({rest.length + (latest ? 1 : 0)})</span>
+      <RevealText as="h1" className="display mb-16 mt-6 text-[clamp(3.5rem,11vw,11rem)]">writing.</RevealText>
+
+      {latest && (
+        <Link href={`/posts/${latest.slug}`} data-cursor="read" className="mb-16 grid items-end gap-6 md:grid-cols-[1.4fr_1fr] md:gap-10">
+          {latest.coverImage && (
+            <ParallaxImage src={latest.coverImage} alt="" priority className="aspect-[16/10]" sizes="(min-width: 768px) 60vw, 100vw" />
+          )}
+          <div>
+            <span className="label">( latest )</span>
+            <h2 className="mt-3 text-[clamp(2rem,3.5vw,3rem)] font-medium leading-none tracking-[-0.035em]">{latest.title}</h2>
+            <p className="label mt-4"><DateFormatter dateString={latest.date} /> · {latest.readingTime} min</p>
+          </div>
+        </Link>
+      )}
+
+      <div>
+        {rest.map((p) => (
+          <IndexRow
+            key={p.slug}
+            href={`/posts/${p.slug}`}
+            year={p.date.slice(0, 4)}
+            title={p.title}
+            category={p.category}
+            meta={`${p.readingTime} min`}
+            hoverLabel="read →"
+            cursor="read"
           />
         ))}
       </div>
-    </div>
+    </Container>
   );
 }

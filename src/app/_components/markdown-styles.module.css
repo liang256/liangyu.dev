@@ -1,47 +1,24 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-[18px] leading-[1.6] md:text-[19px];
 }
-
 .markdown p,
 .markdown ul,
 .markdown ol,
-.markdown blockquote {
-  @apply my-6;
-}
-
-.markdown ul {
-  @apply list-disc pl-6;
-}
-
-.markdown ol {
-  @apply list-decimal pl-6;
-}
-
-.markdown li {
-  @apply my-2;
-}
-
-.markdown ul ul {
-  @apply list-disc pl-4 mt-2;
-}
-
-.markdown ol ol {
-  @apply list-decimal pl-4 mt-2;
-}
-
-.markdown ul ol,
-.markdown ol ul {
-  @apply pl-4 mt-2;
-}
-
-.markdown h1 {
-  @apply text-4xl mt-16 mb-6 leading-tight;
-}
-
-.markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
-}
-
-.markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
-}
+.markdown blockquote,
+.markdown pre,
+.markdown figure,
+.markdown picture { @apply my-6; }
+.markdown ul { @apply list-disc pl-6; }
+.markdown ol { @apply list-decimal pl-6; }
+.markdown li { @apply my-2; }
+.markdown ul ul, .markdown ol ol, .markdown ul ol, .markdown ol ul { @apply mt-2 pl-4; }
+.markdown h1 { @apply mb-6 mt-16 text-4xl font-medium leading-tight tracking-[-0.03em]; }
+.markdown h2 { @apply mb-4 mt-14 text-3xl font-medium leading-snug tracking-[-0.03em]; }
+.markdown h3 { @apply mb-4 mt-10 text-2xl font-medium leading-snug tracking-[-0.02em]; }
+.markdown a { @apply underline decoration-line underline-offset-4 transition-colors hover:decoration-fg; }
+.markdown blockquote { @apply border-l border-fg pl-5 text-fg-muted; }
+.markdown img { @apply h-auto max-w-full; }
+.markdown hr { @apply my-12 border-line; }
+.markdown :not(pre) > code { @apply border border-line px-1 py-0.5 font-mono text-[0.875em]; }
+.markdown table { @apply w-full border-collapse text-base; }
+.markdown th, .markdown td { @apply border-b border-line py-2 pr-4 text-left; }

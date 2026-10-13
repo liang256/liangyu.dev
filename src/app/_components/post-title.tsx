@@ -1,13 +1,10 @@
 import { ReactNode } from "react";
+import { RevealText } from "./motion/reveal-text";
 
-type Props = {
-  children?: ReactNode;
-};
-
-export function PostTitle({ children }: Props) {
+export function PostTitle({ children }: { children?: ReactNode }) {
   return (
-    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
+    <RevealText as="h1" className="display my-6 text-[clamp(2.75rem,7vw,6.5rem)]">
       {children}
-    </h1>
+    </RevealText>
   );
 }

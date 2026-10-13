@@ -4,10 +4,9 @@ import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { SITE_URL } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/container";
-import Header from "@/app/_components/header";
+import { IndexRow } from "@/app/_components/index-row";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
-import Link from "next/link";
 
 type Params = {
   params: {
@@ -51,7 +50,7 @@ export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
   const otherPosts = getAllPosts()
     .filter((p) => p.slug !== params.slug)
-    .slice(0, 6);
+    .slice(0, 3);
 
   if (!post) {
     return notFound();
@@ -82,34 +81,42 @@ export default async function Post({ params }: Params) {
   };
 
   return (
-    <main>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Container>
-        <Header />
-        <article className="mb-32">
+      <Container className="pt-28">
+        <article className="mb-24">
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
             author={post.author}
+            category={post.category}
+            readingTime={post.readingTime}
           />
           <PostBody content={content} />
         </article>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {otherPosts.map((otherPost) => (
-            <div key={otherPost.slug}>
-              <Link href={`/posts/${otherPost.slug}`} className="mr-4">
-                <h2 className="text-xl">{otherPost.title}</h2>
-                <p className="text-gray-500">{otherPost.excerpt}</p>
-              </Link>
-            </div>
-          ))}
-        </div>
+        <section className="border-t border-line pt-10">
+          <span className="label">( more writing )</span>
+          <div className="mt-8">
+            {otherPosts.map((p) => (
+              <IndexRow
+                key={p.slug}
+                href={`/posts/${p.slug}`}
+                year={p.date.slice(0, 4)}
+                title={p.title}
+                category={p.category}
+                meta={`${p.readingTime} min`}
+                hoverLabel="read →"
+                cursor="read"
+              />
+            ))}
+          </div>
+        </section>
       </Container>
-    </main>
+    </>
   );
 }
 
