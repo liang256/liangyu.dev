@@ -6,11 +6,15 @@ import { RevealText } from "@/app/_components/motion/reveal-text";
 import { ParallaxImage } from "@/app/_components/motion/parallax-image";
 import DateFormatter from "@/app/_components/date-formatter";
 import { getAllPosts } from "@/lib/api";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
     "Articles on programming, AI, creative tech, and more by Liangyu Chen.",
+  alternates: {
+    canonical: `${SITE_URL}/posts`,
+  },
   openGraph: {
     title: "Blog | Liangyu Chen",
     description:

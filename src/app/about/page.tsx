@@ -7,12 +7,16 @@ import { splitMarkdownSections } from "@/lib/markdown-sections";
 import { PostBody } from "@/app/_components/post-body";
 import Container from "@/app/_components/container";
 import { RevealText } from "@/app/_components/motion/reveal-text";
+import { SITE_URL } from "@/lib/constants";
 
 const DESCRIPTION = "Learn about Liangyu Chen — software engineer, writer, and creator.";
 
 export const metadata: Metadata = {
   title: "About",
   description: DESCRIPTION,
+  alternates: {
+    canonical: `${SITE_URL}/about`,
+  },
   openGraph: { title: "About | Liangyu Chen", description: DESCRIPTION },
   twitter: { card: "summary_large_image", title: "About | Liangyu Chen", description: DESCRIPTION },
 };

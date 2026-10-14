@@ -20,7 +20,10 @@ export const metadata: Metadata = {
     template: "%s | Liangyu Chen",
   },
   description:
-    "Personal website of Liangyu Chen: software engineer, writer, and creator. Focuses on Python, JavaScript, Go, visual art, and more.",
+    "Liangyu Chen builds pipeline tooling, AI-video workflows, and backend systems for creative production.",
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,

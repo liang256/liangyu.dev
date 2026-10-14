@@ -1,7 +1,7 @@
 ---
 title: "Go: How To Create a 2D Matrix Properly?"
 date: "2022-08-17T14:27:04"
-excerpt: ""
+excerpt: "A practical guide to creating 2D slices in Go, from the naïve approach to contiguous memory layouts."
 coverImage: "/assets/blog/go-create-2d-matrix/cover.jpg"
 author:
   name: Liang

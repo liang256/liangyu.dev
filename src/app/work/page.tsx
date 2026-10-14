@@ -3,10 +3,14 @@ import Container from "@/app/_components/container";
 import { IndexRow } from "@/app/_components/index-row";
 import { RevealText } from "@/app/_components/motion/reveal-text";
 import { projectsData } from "@/app/data/project-data";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Work",
   description: "Open source and personal projects by Liangyu Chen.",
+  alternates: {
+    canonical: `${SITE_URL}/work`,
+  },
   openGraph: { title: "Work | Liangyu Chen", description: "Open source and personal projects by Liangyu Chen." },
   twitter: { card: "summary_large_image", title: "Work | Liangyu Chen", description: "Open source and personal projects by Liangyu Chen." },
 };
