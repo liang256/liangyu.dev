@@ -1,7 +1,7 @@
 ---
 title: What Is Different Between Solana Token and NFT?
 date: "2022-04-22T22:22:39"
-excerpt: ""
+excerpt: "A clear introduction to Solana token accounts, minting rights, and why NFTs are just tokens with supply 1."
 coverImage: "/assets/blog/understand-solana-token-and-nft/cover.jpg"
 author:
   name: Liang

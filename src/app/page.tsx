@@ -8,8 +8,15 @@ import { RevealText } from "@/app/_components/motion/reveal-text";
 import { ParallaxImage } from "@/app/_components/motion/parallax-image";
 import { Loader } from "@/app/_components/motion/loader";
 import { getAllPosts } from "@/lib/api";
+import { SITE_URL } from "@/lib/constants";
 
-export const metadata: Metadata = { title: { absolute: "Liangyu Chen" } };
+export const metadata: Metadata = {
+  title: { absolute: "Liangyu Chen" },
+  description: "Liangyu Chen builds pipeline tooling, AI-video workflows, and backend systems for creative production.",
+  alternates: {
+    canonical: SITE_URL,
+  },
+};
 
 const FOCUS = [
   { title: "pipeline tooling", blurb: "Houdini automation, headless rendering, batch systems." },

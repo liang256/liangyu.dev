@@ -3,12 +3,23 @@ import Container from "@/app/_components/container";
 import { IndexRow } from "@/app/_components/index-row";
 import { RevealText } from "@/app/_components/motion/reveal-text";
 import { projectsData } from "@/app/data/project-data";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Open source and personal projects by Liangyu Chen.",
-  openGraph: { title: "Work | Liangyu Chen", description: "Open source and personal projects by Liangyu Chen." },
-  twitter: { card: "summary_large_image", title: "Work | Liangyu Chen", description: "Open source and personal projects by Liangyu Chen." },
+  description: "Selected open-source and personal projects across Python, Go, AI video, and creative tooling.",
+  alternates: {
+    canonical: `${SITE_URL}/work`,
+  },
+  openGraph: {
+    title: "Work | Liangyu Chen",
+    description: "Selected open-source and personal projects across Python, Go, AI video, and creative tooling.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Work | Liangyu Chen",
+    description: "Selected open-source and personal projects across Python, Go, AI video, and creative tooling.",
+  },
 };
 
 export default function WorkPage() {
