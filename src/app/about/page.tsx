@@ -9,7 +9,7 @@ import Container from "@/app/_components/container";
 import { RevealText } from "@/app/_components/motion/reveal-text";
 import { SITE_URL } from "@/lib/constants";
 
-const DESCRIPTION = "Learn about Liangyu Chen — software engineer, writer, and creator.";
+const DESCRIPTION = "Software engineer focused on pipeline tooling, AI-video workflows, and backend systems for creative production.";
 
 export const metadata: Metadata = {
   title: "About",

@@ -11,20 +11,20 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Articles on programming, AI, creative tech, and more by Liangyu Chen.",
+    "Writing about pipeline tooling, AI video, backend systems, and the occasional practical rabbit hole.",
   alternates: {
     canonical: `${SITE_URL}/posts`,
   },
   openGraph: {
     title: "Blog | Liangyu Chen",
     description:
-      "Articles on programming, AI, creative tech, and more by Liangyu Chen.",
+      "Writing about pipeline tooling, AI video, backend systems, and the occasional practical rabbit hole.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog | Liangyu Chen",
     description:
-      "Articles on programming, AI, creative tech, and more by Liangyu Chen.",
+      "Writing about pipeline tooling, AI video, backend systems, and the occasional practical rabbit hole.",
   },
 };
 
