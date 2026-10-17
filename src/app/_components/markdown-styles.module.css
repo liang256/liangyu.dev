@@ -18,6 +18,7 @@
 .markdown a { @apply underline decoration-line underline-offset-4 transition-colors hover:decoration-fg; }
 .markdown blockquote { @apply border-l border-fg pl-5 text-fg-muted; }
 .markdown img { @apply h-auto max-w-full; }
+.markdown pre { @apply max-w-full overflow-x-auto; }
 .markdown hr { @apply my-12 border-line; }
 .markdown :not(pre) > code { @apply border border-line px-1 py-0.5 font-mono text-[0.875em]; }
 .markdown table { @apply w-full border-collapse text-base; }

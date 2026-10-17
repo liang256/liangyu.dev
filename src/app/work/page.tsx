@@ -7,18 +7,18 @@ import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Selected open-source and personal projects across Python, Go, AI video, and creative tooling.",
+  description: "Selected open-source and personal projects across LINE apps, Python, Go, AI video, and creative tooling.",
   alternates: {
     canonical: `${SITE_URL}/work`,
   },
   openGraph: {
     title: "Work | Liangyu Chen",
-    description: "Selected open-source and personal projects across Python, Go, AI video, and creative tooling.",
+    description: "Selected open-source and personal projects across LINE apps, Python, Go, AI video, and creative tooling.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Work | Liangyu Chen",
-    description: "Selected open-source and personal projects across Python, Go, AI video, and creative tooling.",
+    description: "Selected open-source and personal projects across LINE apps, Python, Go, AI video, and creative tooling.",
   },
 };
 
@@ -32,19 +32,22 @@ export default function WorkPage() {
       <span className="label">( work )&nbsp;&nbsp;({projects.length})</span>
       <RevealText as="h1" className="display mb-16 mt-6 text-[clamp(3.5rem,11vw,11rem)]">work.</RevealText>
       <div>
-        {projects.map((p) => (
-          <IndexRow
-            key={p.slug}
-            href={p.link}
-            year={p.date.slice(0, 4)}
-            title={p.title}
-            category={p.category}
-            meta="↗"
-            hoverLabel="open ↗"
-            cursor="open"
-            external
-          />
-        ))}
+        {projects.map((p) => {
+          const external = /^https?:\/\//.test(p.link);
+          return (
+            <IndexRow
+              key={p.slug}
+              href={p.link}
+              year={p.date.slice(0, 4)}
+              title={p.title}
+              category={p.category}
+              meta={external ? "↗" : "→"}
+              hoverLabel={external ? "open ↗" : "read case study →"}
+              cursor={external ? "open" : "read"}
+              external={external}
+            />
+          );
+        })}
       </div>
     </Container>
   );

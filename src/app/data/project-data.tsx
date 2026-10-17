@@ -165,5 +165,18 @@ export const projectsData: Project[] = [
       published: true,
       link: "https://promptswim.com"
     },
+    {
+      id: '13',
+      title: '減脂小豬 — LINE AI Food Diary',
+      description: 'A LINE bot + LIFF mini app that turns a food photo into a nutrition log. Vision AI parsing, confirm templates, rich menu, scheduled pushes, and an agent-assisted on-call loop. Built with Next.js, Supabase, OpenAI, and Vercel.',
+      date: '2026-04-30',
+      tags: ['LINE Messaging API', 'LIFF', 'Next.js', 'TypeScript', 'Supabase', 'OpenAI', 'Vercel'],
+      views: 0,
+      type: 'normal',
+      slug: 'line-bot-food-diary',
+      category: 'line app',
+      published: true,
+      link: "/work/line-bot-food-diary"
+    },
   ];
   
