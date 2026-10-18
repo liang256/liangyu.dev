@@ -1,28 +1,26 @@
 import { Work } from "@/interfaces/work";
-import fs from "fs";
-import matter from "gray-matter";
 import { join } from "path";
+import { markdownSlugs, readLocalizedMarkdown } from "./content";
+import { DEFAULT_LOCALE, type Locale } from "./i18n";
 import { readingTime } from "./reading-time";
 
 const workDirectory = join(process.cwd(), "_work");
 
 export function getWorkSlugs() {
-  if (!fs.existsSync(workDirectory)) return [];
-  return fs.readdirSync(workDirectory).filter((f) => f.endsWith(".md"));
+  return markdownSlugs(workDirectory);
 }
 
-export function getWorkBySlug(slug: string): Work | null {
+export function getWorkBySlug(slug: string, locale: Locale = DEFAULT_LOCALE): Work | null {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(workDirectory, `${realSlug}.md`);
-  if (!fs.existsSync(fullPath)) return null;
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const file = readLocalizedMarkdown(workDirectory, realSlug, locale);
+  if (!file) return null;
+  const { data, content } = file;
 
   return { ...data, slug: realSlug, content, readingTime: readingTime(content) } as Work;
 }
 
-export function getAllWork(): Work[] {
+export function getAllWork(locale: Locale = DEFAULT_LOCALE): Work[] {
   return getWorkSlugs()
-    .map((slug) => getWorkBySlug(slug) as Work)
+    .map((slug) => getWorkBySlug(slug, locale) as Work)
     .sort((a, b) => (a.date > b.date ? -1 : 1));
 }

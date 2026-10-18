@@ -2,11 +2,13 @@
 
 import { useTheme } from '@/app/contexts/theme-context';
 
-export default function ThemeToggle() {
+type Props = { labels: { light: string; dark: string; toggle: string } };
+
+export default function ThemeToggle({ labels }: Props) {
   const { theme, toggleTheme } = useTheme();
   return (
-    <button onClick={toggleTheme} aria-label="Toggle theme" className="opacity-60 transition-opacity hover:opacity-100">
-      {theme === 'dark' ? 'light' : 'dark'}
+    <button onClick={toggleTheme} aria-label={labels.toggle} className="opacity-60 transition-opacity hover:opacity-100">
+      {theme === 'dark' ? labels.light : labels.dark}
     </button>
   );
 }

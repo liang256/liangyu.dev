@@ -51,6 +51,29 @@
   }
 }
 
+/* CJK locales: the Latin web fonts have no CJK glyphs, so name system CJK faces explicitly,
+   and relax the tight Latin display tracking/leading that makes ideographs collide. */
+html[lang="zh-Hant-TW"] {
+  --font-cjk: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+html[lang="ja"] {
+  --font-cjk: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+}
+html[lang="zh-Hant-TW"] body,
+html[lang="ja"] body {
+  font-family: var(--font-sans), var(--font-cjk);
+  line-height: 1.7;
+}
+html[lang="zh-Hant-TW"] .label,
+html[lang="ja"] .label {
+  font-family: var(--font-mono), var(--font-cjk);
+}
+html[lang="zh-Hant-TW"] .display,
+html[lang="ja"] .display {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
 /* Home hides the scrollbar (spec: home only) */
 html:has([data-page="home"]) { scrollbar-width: none; }
 html:has([data-page="home"])::-webkit-scrollbar { display: none; }

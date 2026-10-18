@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllWork, getWorkBySlug } from "@/lib/work";
+import { getDictionary } from "@/dictionaries";
+import { getWorkBySlug, getWorkSlugs } from "@/lib/work";
 import { SITE_URL } from "@/lib/constants";
+import { HTML_LANG, OG_LOCALE, alternatesFor, localePath, type Locale } from "@/lib/i18n";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/container";
 import { IndexRow } from "@/app/_components/index-row";
@@ -15,31 +17,32 @@ export const dynamicParams = false;
 
 type Params = {
   params: {
+    locale: Locale;
     slug: string;
   };
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const work = getWorkBySlug(params.slug);
+  const work = getWorkBySlug(params.slug, params.locale);
 
   if (!work) {
     return notFound();
   }
 
   const title = work.seoTitle ?? `${work.title} — ${work.subtitle}`;
+  const path = `/work/${work.slug}`;
 
   return {
     title,
     description: work.excerpt,
-    alternates: {
-      canonical: `${SITE_URL}/work/${work.slug}`,
-    },
+    alternates: alternatesFor(SITE_URL, params.locale, path),
     openGraph: {
       title,
       description: work.excerpt,
       type: "article",
       publishedTime: work.date,
-      url: `${SITE_URL}/work/${work.slug}`,
+      url: SITE_URL + localePath(params.locale, path),
+      locale: OG_LOCALE[params.locale],
       images: [
         {
           url: work.coverImage,
@@ -57,23 +60,26 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export default async function WorkDetail({ params }: Params) {
-  const work = getWorkBySlug(params.slug);
+  const { locale } = params;
+  const t = getDictionary(locale);
+  const work = getWorkBySlug(params.slug, locale);
 
   if (!work) {
     return notFound();
   }
 
   const content = await markdownToHtml(work.content || "");
+  const categoryLabel = (c?: string) => c && (t.work.categories[c] ?? c);
   const otherProjects = projectsData
     .filter((p) => p.published && p.slug !== work.slug)
     .sort((a, b) => (a.date > b.date ? -1 : 1))
     .slice(0, 3);
 
   const facts = [
-    { label: "year", value: work.year },
-    { label: "role", value: work.role },
-    { label: "platform", value: work.platform },
-    { label: "stack", value: work.stack.join(", ") },
+    { label: t.work.year, value: work.year },
+    { label: t.work.role, value: work.role },
+    { label: t.work.platform, value: work.platform },
+    { label: t.work.stack, value: work.stack.join(", ") },
   ];
 
   const jsonLd = {
@@ -84,7 +90,8 @@ export default async function WorkDetail({ params }: Params) {
     description: work.excerpt,
     image: `${SITE_URL}${work.coverImage}`,
     datePublished: work.date,
-    url: `${SITE_URL}/work/${work.slug}`,
+    inLanguage: HTML_LANG[locale],
+    url: SITE_URL + localePath(locale, `/work/${work.slug}`),
     ...(work.liveUrl ? { sameAs: work.liveUrl } : {}),
     author: {
       "@type": "Person",
@@ -103,9 +110,9 @@ export default async function WorkDetail({ params }: Params) {
         <article className="mb-24">
           <header className="mb-12 md:mb-16">
             <p className="label">
-              <Link href="/work" className="hover:text-fg">← work</Link>
-              {work.category && <>&nbsp;&nbsp;/&nbsp;&nbsp;{work.category}</>}
-              &nbsp;&nbsp;/&nbsp;&nbsp;case study
+              <Link href={localePath(locale, "/work")} className="hover:text-fg">{t.work.back}</Link>
+              {work.category && <>&nbsp;&nbsp;/&nbsp;&nbsp;{categoryLabel(work.category)}</>}
+              &nbsp;&nbsp;/&nbsp;&nbsp;{t.work.caseStudy}
             </p>
             <PostTitle>{work.title}</PostTitle>
             <p className="mb-10 max-w-[40ch] text-xl leading-snug tracking-[-0.02em] md:text-2xl">
@@ -122,18 +129,18 @@ export default async function WorkDetail({ params }: Params) {
             {work.liveUrl && (
               <div className="mt-8 flex flex-wrap gap-3">
                 <PillButton href={work.liveUrl} external>
-                  visit live ↗
+                  {t.work.visitLive}
                 </PillButton>
-                <PillButton href="mailto:liangyu.chen.dev@gmail.com">get in touch</PillButton>
+                <PillButton href="mailto:liangyu.chen.dev@gmail.com">{t.common.getInTouch}</PillButton>
               </div>
             )}
           </header>
           <PostBody content={content} />
         </article>
         <section className="mb-24 border-t border-line pt-10">
-          <span className="label">( work with me )</span>
+          <span className="label">( {t.work.workWithMe} )</span>
           <p className="mt-6 max-w-[32ch] text-[clamp(1.75rem,4vw,3rem)] font-medium leading-[1.1] tracking-[-0.03em]">
-            Planning a LINE bot or mini app? Let&apos;s talk it through.
+            {t.work.cta}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <PillButton href="mailto:liangyu.chen.dev@gmail.com">liangyu.chen.dev@gmail.com</PillButton>
@@ -143,19 +150,19 @@ export default async function WorkDetail({ params }: Params) {
           </div>
         </section>
         <section className="border-t border-line pt-10">
-          <span className="label">( more work )</span>
+          <span className="label">( {t.work.more} )</span>
           <div className="mt-8">
             {otherProjects.map((p) => {
               const external = /^https?:\/\//.test(p.link);
               return (
                 <IndexRow
                   key={p.slug}
-                  href={p.link}
+                  href={localePath(locale, p.link)}
                   year={p.date.slice(0, 4)}
                   title={p.title}
-                  category={p.category}
+                  category={categoryLabel(p.category)}
                   meta={external ? "↗" : "→"}
-                  hoverLabel={external ? "open ↗" : "read case study →"}
+                  hoverLabel={external ? t.common.openArrow : t.common.readCaseStudy}
                   cursor={external ? "open" : "read"}
                   external={external}
                 />
@@ -168,8 +175,7 @@ export default async function WorkDetail({ params }: Params) {
   );
 }
 
+// Called once per locale from the [locale] layout's params.
 export async function generateStaticParams() {
-  return getAllWork().map((work) => ({
-    slug: work.slug,
-  }));
+  return getWorkSlugs().map((slug) => ({ slug }));
 }
