@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap, motionEnabled } from "./gsap";
 
-export function Cursor() {
+// labels translates data-cursor keys ("read", "open") into the page language.
+export function Cursor({ labels }: { labels: Record<string, string> }) {
   const dot = useRef<HTMLDivElement>(null);
   const [label, setLabel] = useState("");
 
@@ -32,7 +33,7 @@ export function Cursor() {
       aria-hidden
       className="cursor-dot pointer-events-none fixed left-0 top-0 z-[90] h-20 w-20 items-center justify-center rounded-full bg-fg font-mono text-[11px] lowercase text-bg"
     >
-      {label}
+      {labels[label] ?? label}
     </div>
   );
 }

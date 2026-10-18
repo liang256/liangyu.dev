@@ -1,25 +1,28 @@
 import type { Metadata } from "next";
-import fs from "fs";
 import { join } from "path";
 import Script from "next/script";
 import markdownToHtml from "@/lib/markdownToHtml";
+import { readLocalizedMarkdown } from "@/lib/content";
 import { splitMarkdownSections } from "@/lib/markdown-sections";
 import { PostBody } from "@/app/_components/post-body";
 import Container from "@/app/_components/container";
 import { RevealText } from "@/app/_components/motion/reveal-text";
+import { getDictionary } from "@/dictionaries";
 import { SITE_URL } from "@/lib/constants";
+import { alternatesFor, type Locale } from "@/lib/i18n";
 
-const DESCRIPTION = "Software engineer focused on pipeline tooling, AI-video workflows, and backend systems for creative production.";
+type Props = { params: { locale: Locale } };
 
-export const metadata: Metadata = {
-  title: "About",
-  description: DESCRIPTION,
-  alternates: {
-    canonical: `${SITE_URL}/about`,
-  },
-  openGraph: { title: "About | Liangyu Chen", description: DESCRIPTION },
-  twitter: { card: "summary_large_image", title: "About | Liangyu Chen", description: DESCRIPTION },
-};
+export function generateMetadata({ params: { locale } }: Props): Metadata {
+  const { title, description } = getDictionary(locale).about;
+  return {
+    title,
+    description,
+    alternates: alternatesFor(SITE_URL, locale, "/about"),
+    openGraph: { title: `${title} | Liangyu Chen`, description },
+    twitter: { card: "summary_large_image", title: `${title} | Liangyu Chen`, description },
+  };
+}
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -30,8 +33,9 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
   );
 }
 
-export default async function AboutPage() {
-  const raw = fs.readFileSync(join(process.cwd(), "_about/about.md"), "utf8");
+export default async function AboutPage({ params: { locale } }: Props) {
+  const t = getDictionary(locale);
+  const raw = readLocalizedMarkdown(join(process.cwd(), "_about"), "about", locale)?.content ?? "";
   const [intro, ...sections] = splitMarkdownSections(raw);
   const introHtml = intro ? await markdownToHtml(intro.body) : "";
   const rendered = await Promise.all(
@@ -40,16 +44,16 @@ export default async function AboutPage() {
 
   return (
     <Container className="pt-28">
-      <span className="label">( about )</span>
+      <span className="label">( {t.about.label} )</span>
       <RevealText as="h1" className="display mb-12 mt-6 max-w-6xl text-[clamp(2.75rem,7vw,7rem)]">
-        where technical depth meets creative production.
+        {t.about.heading}
       </RevealText>
       {introHtml && (
-        <Row label="intro">
+        <Row label={t.about.intro}>
           <PostBody content={introHtml} />
         </Row>
       )}
-      <Row label="short film">
+      <Row label={t.about.shortFilm}>
         <div className="relative aspect-video w-full">
           <iframe
             src="https://player.vimeo.com/video/412302470?h=d0af2aa869"
