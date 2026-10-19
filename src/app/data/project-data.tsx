@@ -155,15 +155,15 @@ export const projectsData: Project[] = [
     {
       id: '12',
       title: 'Prompt Swim',
-      description: 'A web app that serves as a prompt gallery for artists. Artists can submit prompts and view other artists\' work.\n- Built using Next.js, TypeScript, MongoDB, OpenAI, DALL·E, and AWS Lambda. Deployed on Vercel.\n- Integrated with Google OAuth for authentication and Stripe for payments.',
+      description: 'An AI image gallery with pay-as-you-go credits. OpenAI DALL·E generation, Stripe Checkout with signature-verified idempotent webhooks, a transactional points ledger in MongoDB, S3 storage, and Google OAuth. Built with Next.js and deployed on Vercel.',
       date: '2024-07-01',
-      tags: ['Next.js', 'Tailwind CSS', 'React', 'TypeScript', 'MongoDB', 'OpenAI', 'DALL·E', 'AWS Lambda', 'Vercel', 'Google OAuth', 'Stripe'],
+      tags: ['Next.js', 'Tailwind CSS', 'React', 'TypeScript', 'MongoDB', 'OpenAI', 'DALL·E', 'AWS S3', 'Vercel', 'Google OAuth', 'Stripe'],
       views: 4192,
       type: 'normal',
       slug: 'prompt-swim',
       category: 'web app',
       published: true,
-      link: "https://promptswim.com"
+      link: "/work/prompt-swim"
     },
     {
       id: '13',

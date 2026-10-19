@@ -140,7 +140,7 @@ export default async function WorkDetail({ params }: Params) {
         <section className="mb-24 border-t border-line pt-10">
           <span className="label">( {t.work.workWithMe} )</span>
           <p className="mt-6 max-w-[32ch] text-[clamp(1.75rem,4vw,3rem)] font-medium leading-[1.1] tracking-[-0.03em]">
-            {t.work.cta}
+            {work.cta ?? t.work.cta}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <PillButton href="mailto:liangyu.chen.dev@gmail.com">liangyu.chen.dev@gmail.com</PillButton>
