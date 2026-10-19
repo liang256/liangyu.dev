@@ -70,6 +70,8 @@ const zhTw: Dictionary = {
     heading: "技術深度與創意製作的交會之處。",
     intro: "簡介",
     shortFilm: "短片",
+    selectedWork: "精選作品",
+    allWork: "所有作品 →",
   },
   work: {
     title: "作品",

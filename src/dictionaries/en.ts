@@ -71,6 +71,8 @@ const en = {
     heading: "where technical depth meets creative production.",
     intro: "intro",
     shortFilm: "short film",
+    selectedWork: "selected work",
+    allWork: "all work →",
   },
   work: {
     title: "Work",
