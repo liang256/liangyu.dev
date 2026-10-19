@@ -90,15 +90,15 @@ export const projectsData: Project[] = [
     {
       id: '7',
       title: "into pool",
-      description: 'A project that create liminal space style images using AI. Compared Dall-E-2, Dall-E-3, and other AI models, and developed a better pipeline to generate images.',
-      date: '2022-11-30',
-      tags: ['Pyhon', 'openai', 'AI', 'Docker'],
+      description: 'An AI art series of liminal swimming pools. The newest model missed the feeling, so I combined DALL·E 3 for composition with DALL·E 2 for mood, and curated the results into one consistent look.',
+      date: '2024-04-18',
+      tags: ['AI art', 'art direction', 'DALL·E 2', 'DALL·E 3', 'Python'],
       views: 1150,
       type: 'normal',
       slug: 'into-pool',
       category: 'ai imagery',
       published: true,
-      link: "https://github.com/liang256/intopool"
+      link: "/work/into-pool"
     },
     {
       id: '8',

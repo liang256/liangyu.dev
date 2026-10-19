@@ -129,7 +129,7 @@ export default async function WorkDetail({ params }: Params) {
             {work.liveUrl && (
               <div className="mt-8 flex flex-wrap gap-3">
                 <PillButton href={work.liveUrl} external>
-                  {t.work.visitLive}
+                  {work.liveLabel ?? t.work.visitLive}
                 </PillButton>
                 <PillButton href="mailto:liangyu.chen.dev@gmail.com">{t.common.getInTouch}</PillButton>
               </div>
