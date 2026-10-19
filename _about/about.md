@@ -14,11 +14,22 @@ I specialize in backend systems that are maintainable and composable: clean doma
 I've been working with AI coding tools for a while, and I care about where they actually help versus where they add noise — particularly in domain-specific contexts like VFX pipelines where the training data thins out fast. My [writing on this](https://liangyu.dev/posts) tries to be concrete and honest rather than promotional.
 
 ### Creative Technology
-My background in animation production — including rigging work for a Disney Jr. series — gives me fluency in both the creative pipeline and the tooling that supports it. That cross-disciplinary perspective shows up in how I approach problems: I think about the person using the tool, not just the system running it.
+My background in animation production — including rigging work for a Disney Jr. series — gives me fluency in both the creative pipeline and the tooling that supports it. That cross-disciplinary perspective shows up in how I approach problems: I think about the person using the tool, not just the system running it. It's also why, when I work with generative AI, I judge the output as an image, not just as an API response.
 
 # Projects
 
-Some things I've built: [Prompt Swim](https://github.com/liang256/prompt-swim) (an AI image prompt gallery with Stripe and auth), [Enso Executer](https://github.com/liang256/enso-executer) (a Houdini batch processing tool built with Python, DDD, Flask, and Docker), and a few other things visible on [the projects page](/projects).
+Some things I've built, each with a write-up of how and why:
+
+- [Prompt Swim](/work/prompt-swim): an AI image gallery with pay-as-you-go credits. OpenAI generation, Stripe Checkout with idempotent webhooks, and a transactional points ledger.
+- [減脂小豬](/work/line-bot-food-diary): a LINE bot and LIFF mini app that turns a food photo into a nutrition log, running in production.
+- [into pool](/work/into-pool): an AI art series where the older model made the better pictures, and the art direction that decided which.
+- [Enso Executer](https://github.com/liang256/enso-executer): a Houdini batch processing tool built with Python, DDD, Flask, and Docker.
+
+More on [the work page](/work).
+
+# Open Source
+
+I contributed fixes to the [USD Survival Guide](https://github.com/LucaScheller/VFX-UsdSurvivalGuide), a well-known OpenUSD reference for VFX pipeline developers. [My merged pull request](https://github.com/LucaScheller/VFX-UsdSurvivalGuide/pull/19) corrected code examples that didn't match how the USD API actually behaves (a wrong schema token, a relationship pointing at the wrong prim, a conflicting attribute name, an incorrect `IsPrimvar` result) and cleaned up the documentation around them.
 
 # Inspirations from Animation
 
@@ -26,4 +37,4 @@ My love for animation spans a wide range of styles and narratives. I find creati
 
 # Connect
 
-If you're building pipeline tools, working on AI-assisted production workflows, or thinking through a hard technical problem in creative tech — I'm interested. You can find my code on [GitHub](https://github.com/liang256) and my writing on [the blog](/posts).
+If you're building pipeline tools, adding AI or payments to a product, looking for AI visuals with a clear point of view, or thinking through a hard technical problem in creative tech — I'm interested. Email me at [liangyu.chen.dev@gmail.com](mailto:liangyu.chen.dev@gmail.com). You can find my code on [GitHub](https://github.com/liang256) and my writing on [the blog](/posts).

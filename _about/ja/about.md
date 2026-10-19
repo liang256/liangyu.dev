@@ -14,11 +14,22 @@ Liang です。バックエンドエンジニアリング、ワークフロー�
 AI コーディングツールはしばらく使い込んでいて、本当に役立つ場面とノイズを増やすだけの場面の見極めを大事にしています。特に VFX パイプラインのように、学習データがすぐに薄くなる領域ではなおさらです。[このテーマの記事](/ja/posts)では、宣伝ではなく具体的で正直な内容を心がけています。
 
 ### クリエイティブテクノロジー
-Disney Jr. のシリーズでのリギングを含むアニメーション制作の経験があり、クリエイティブなパイプラインとそれを支えるツールの両方に通じています。この分野横断の視点は問題への向き合い方にも表れていて、システムだけでなく、ツールを使う人のことを考えるようにしています。
+Disney Jr. のシリーズでのリギングを含むアニメーション制作の経験があり、クリエイティブなパイプラインとそれを支えるツールの両方に通じています。この分野横断の視点は問題への向き合い方にも表れていて、システムだけでなく、ツールを使う人のことを考えるようにしています。生成 AI を使うときに、出力を API のレスポンスとしてではなく、一枚の絵として評価するのもそのためです。
 
 # プロジェクト
 
-これまでにつくったもの：[Prompt Swim](https://github.com/liang256/prompt-swim)（Stripe と認証を備えた AI 画像プロンプトギャラリー）、[Enso Executer](https://github.com/liang256/enso-executer)（Python、DDD、Flask、Docker で構築した Houdini のバッチ処理ツール）、そのほかは[制作実績ページ](/ja/work)でご覧いただけます。
+これまでにつくったものです。それぞれ、どうつくったか・なぜそうしたかを記事にまとめています：
+
+- [Prompt Swim](/ja/work/prompt-swim)：使った分だけ払う AI 画像ギャラリー。OpenAI による画像生成、冪等な Webhook を備えた Stripe Checkout、トランザクションによるポイント台帳。
+- [減脂小豬](/ja/work/line-bot-food-diary)：食事の写真を栄養ログに変える LINE bot と LIFF ミニアプリ。本番環境で運用中です。
+- [into pool](/ja/work/into-pool)：古いモデルのほうが良い絵を描いた AI アートシリーズと、それを見極めたアートディレクション。
+- [Enso Executer](https://github.com/liang256/enso-executer)：Python、DDD、Flask、Docker で構築した Houdini のバッチ処理ツール。
+
+そのほかは[制作実績ページ](/ja/work)でご覧いただけます。
+
+# オープンソース
+
+VFX パイプライン開発者の間でよく知られた OpenUSD のリファレンス、[USD Survival Guide](https://github.com/LucaScheller/VFX-UsdSurvivalGuide) に修正を貢献しました。[マージされたプルリクエスト](https://github.com/LucaScheller/VFX-UsdSurvivalGuide/pull/19)では、USD API の実際の挙動と合っていなかったコード例（誤ったスキーマトークン、間違った prim を指す relationship、衝突する属性名、誤った `IsPrimvar` の戻り値）を修正し、関連するドキュメントも整理しました。
 
 # アニメーションからのインスピレーション
 
@@ -26,4 +37,4 @@ Disney Jr. のシリーズでのリギングを含むアニメーション制作
 
 # 連絡
 
-パイプラインツールをつくっている方、AI を活用した制作ワークフローに取り組んでいる方、クリエイティブテックの難しい技術課題について考えている方——ぜひお話ししましょう。コードは [GitHub](https://github.com/liang256) に、文章は[ブログ](/ja/posts)にあります。
+パイプラインツールをつくっている方、プロダクトに AI や決済を組み込みたい方、はっきりした世界観のある AI ビジュアルをお探しの方、クリエイティブテックの難しい技術課題について考えている方——ぜひお話ししましょう。メールは [liangyu.chen.dev@gmail.com](mailto:liangyu.chen.dev@gmail.com) までどうぞ。コードは [GitHub](https://github.com/liang256) に、文章は[ブログ](/ja/posts)にあります。
