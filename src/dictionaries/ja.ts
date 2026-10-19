@@ -72,6 +72,8 @@ const ja: Dictionary = {
     heading: "技術の深さとクリエイティブ制作が交わる場所。",
     intro: "はじめに",
     shortFilm: "短編映画",
+    selectedWork: "主な制作実績",
+    allWork: "制作実績一覧 →",
   },
   work: {
     title: "制作実績",

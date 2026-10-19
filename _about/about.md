@@ -4,26 +4,33 @@ I'm Liang, a developer who builds at the intersection of backend engineering, wo
 
 # What I Do
 
-### Pipeline Tooling and Workflow Automation
-I design and build tools that make complex production workflows reliable and repeatable. That includes backend systems, batch processing pipelines, and domain-driven architectures that hold up when the constraints get messy. My Houdini pipeline work — scripting, node automation, headless rendering — comes from doing this in a real production environment.
+### Pipeline Tooling
+Tools that make messy production workflows reliable and repeatable: batch processing, Houdini automation, headless rendering, and domain-driven Python that holds up in a real studio. Example: [Enso Executer](https://github.com/liang256/enso-executer).
 
 ### Backend Engineering
-I specialize in backend systems that are maintainable and composable: clean domain models, thoughtful API design, sensible infrastructure choices. I've integrated travel agency ticketing APIs, built ERP systems from scratch, and rebuilt aging systems that had grown too fragile to extend.
+Maintainable backend systems with clean domain models and thoughtful APIs. I've integrated travel agency ticketing APIs, built ERP systems from scratch, and rebuilt legacy systems too fragile to extend.
 
-### AI Tools and Agentic Development
-I've been working with AI coding tools for a while, and I care about where they actually help versus where they add noise — particularly in domain-specific contexts like VFX pipelines where the training data thins out fast. My [writing on this](https://liangyu.dev/posts) tries to be concrete and honest rather than promotional.
+### AI in Production
+AI features and AI-assisted workflows that actually help, not just add noise, especially in niche domains like VFX where models know less. I [write about this](/posts) concretely, not promotionally.
 
 ### Creative Technology
-My background in animation production — including rigging work for a Disney Jr. series — gives me fluency in both the creative pipeline and the tooling that supports it. That cross-disciplinary perspective shows up in how I approach problems: I think about the person using the tool, not just the system running it.
+I came from animation, including rigging on a Disney Jr. series. I think about the person using the tool, and I judge generative AI output as an image, not just an API response.
 
-# Projects
+# Open Source
 
-Some things I've built: [Prompt Swim](https://github.com/liang256/prompt-swim) (an AI image prompt gallery with Stripe and auth), [Enso Executer](https://github.com/liang256/enso-executer) (a Houdini batch processing tool built with Python, DDD, Flask, and Docker), and a few other things visible on [the projects page](/projects).
+I contributed fixes to the [USD Survival Guide](https://github.com/LucaScheller/VFX-UsdSurvivalGuide), a well-known OpenUSD reference for VFX pipeline developers. [My merged pull request](https://github.com/LucaScheller/VFX-UsdSurvivalGuide/pull/19) corrected examples that didn't match how the USD API actually behaves, like this one:
+
+```diff
+- Sdf.AttributeSpec(prim_spec, UsdGeom.Tokens.purpose, ...)
++ Sdf.AttributeSpec(prim_spec, UsdGeom.Tokens.visibility, ...)
+- UsdGeom.Primvar.IsPrimvar(primvar)  # Returns: False
++ UsdGeom.Primvar.IsPrimvar(primvar)  # Returns: True
+```
 
 # Inspirations from Animation
 
-My love for animation spans a wide range of styles and narratives. I find creative fuel in Pixar films like Toy Story and the worlds of Hayao Miyazaki — they enrich my sense of narrative and aesthetic craft. On the other side, I'm drawn to the unconventional: Cat Soup, Over the Garden Wall, Smiling Friends. Works that push the boundaries of what a story can be tend to remind me that interesting technical work is never purely technical.
+Pixar and Hayao Miyazaki shaped my sense of story and craft; Cat Soup, Over the Garden Wall and Smiling Friends remind me that interesting technical work is never purely technical.
 
 # Connect
 
-If you're building pipeline tools, working on AI-assisted production workflows, or thinking through a hard technical problem in creative tech — I'm interested. You can find my code on [GitHub](https://github.com/liang256) and my writing on [the blog](/posts).
+If you're building pipeline tools, adding AI or payments to a product, looking for AI visuals with a clear point of view, or thinking through a hard technical problem in creative tech — I'm interested. Email me at [liangyu.chen.dev@gmail.com](mailto:liangyu.chen.dev@gmail.com). You can find my code on [GitHub](https://github.com/liang256) and my writing on [the blog](/posts).

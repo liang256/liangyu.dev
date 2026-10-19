@@ -1,6 +1,17 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { splitMarkdownSections } from "./markdown-sections.ts";
+import { splitMarkdownSections, splitSubsections } from "./markdown-sections.ts";
+
+test("splitSubsections splits on ### headings", () => {
+  assert.deepEqual(splitSubsections("### A\ntext a\n\n### B\ntext b"), [
+    { heading: "A", body: "text a" },
+    { heading: "B", body: "text b" },
+  ]);
+});
+
+test("splitSubsections returns [] without ### headings", () => {
+  assert.deepEqual(splitSubsections("just prose\n- a list"), []);
+});
 
 test("splits on level-1 headings only", () => {
   const md = "# A\ntext a\n### sub\nmore\n# B\ntext b\n";
