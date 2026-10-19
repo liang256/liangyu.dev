@@ -2,7 +2,7 @@
 title: "into pool"
 seoTitle: "into pool: An AI Art Series Where Taste Mattered More Than the Newest Model"
 subtitle: "An AI art series of liminal swimming pools — and why the older model made the better pictures."
-excerpt: "Case study: into pool, a poolcore / liminal-space image series made with AI. The newest model rendered the prompts perfectly and missed the feeling; the older one got it. How I defined the look, judged hundreds of images, and built a process that turns a mood into a consistent series."
+excerpt: "Case study: into pool, a poolcore / liminal-space image series made with AI. The newest model rendered the prompts perfectly and missed the feeling; the older one got it. How I defined the look, sifted through the results, and built a process that turns a mood into a consistent series."
 coverImage: "/assets/work/into-pool/cover.jpg"
 date: "2026-10-19T08:00:00.000Z"
 year: "2024"
@@ -11,6 +11,7 @@ role: "Solo — concept, art direction, image generation, curation"
 platform: "Instagram (@intopool)"
 stack: ["DALL·E 2", "DALL·E 3", "GPT-3.5", "Python"]
 liveUrl: "https://www.instagram.com/intopool/"
+liveLabel: "view portfolio ↗"
 cta: "Looking for AI visuals with a clear look — a series, a campaign, a world? Let’s talk it through."
 ---
 
@@ -47,7 +48,7 @@ I wrote about this comparison back then in [DALL·E 2 Is Better Than DALL·E 3 I
 No software can tell you whether a pool feels right. So before generating at scale, I wrote down what "right" meant:
 
 - **Research.** Existing poolcore and liminal-space work, photos of real municipal pools, and the words the community uses to describe the feeling (`#dreamcore`, `#liminalspace`, `#anemoia`, `#backrooms`…).
-- **A visual vocabulary.** A short list of objects (white tiles, a plastic chair, dark holes in the wall, a lone rubber duck, a red water slide) and a list of moods (silent, echo, VHS glitch, fuzzy memories, good old days). Every image in the series is built from these, which is what makes them feel like one world instead of thirty random pictures.
+- **A visual vocabulary.** A short list of objects (white tiles, a plastic chair, dark holes in the wall, a lone rubber duck, a red water slide) and a list of moods (silent, echo, VHS glitch, fuzzy memories, good old days). Every image in the series is built from these, which is what makes them feel like one world instead of a pile of random pictures.
 - **Clear reject rules.** Too clean, too dramatic, too scary, too obviously AI. Most images fail on one of these, and knowing which one tells you what to change next.
 
 This is the same work an art director does for a campaign. With AI it matters more, because the tool will happily produce a thousand images that miss the brief.
@@ -69,14 +70,14 @@ By any technical measure, the left image wins: sharper, more coherent, more deta
 
 ## Making it efficient
 
-Taste decides *what* to keep. Process decides how quickly you get there. Over 200 images were generated for this series and 26 made the shortlist. That ratio is normal for creative work, so the aim was to make every round of exploring fast and cheap:
+Taste decides *what* to keep. Process decides how quickly you get there. Only a small share of the generated images ever make it into the series. That's normal for creative work, so the aim was to make every round of exploring fast and cheap:
 
 - **Reusable prompt sets.** Named recipes ("dream", "dark", "circle", even one written entirely in Chinese) that can be mixed and varied instead of rewritten each time. A good direction becomes something I can return to, not a lucky accident.
 - **An idea generator.** An AI writing assistant turns the visual vocabulary into new scene descriptions, suggesting combinations I wouldn't have thought of. I keep the ones that fit and drop the rest.
 - **Keeping the AI from "improving" things.** Newer models quietly rewrite prompts to add detail. For a look built on emptiness, that's the wrong instinct, so the process tells the model to leave short prompts alone.
 - **Everything recorded.** Every image is saved with the exact prompt and model that made it, so when a client says "more like that one", I can make more like that one.
 
-I wrote this as a small set of scripts rather than clicking through a web interface, which is what keeps a few hundred generations manageable for one person. The same setup scales to the volumes a campaign or content calendar needs.
+I wrote this as a small set of scripts rather than clicking through a web interface, which is what keeps a large volume of generations manageable for one person. The same setup scales to the volumes a campaign or content calendar needs.
 
 ## Why this matters if you're commissioning visuals
 

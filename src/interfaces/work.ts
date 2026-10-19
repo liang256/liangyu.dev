@@ -12,6 +12,7 @@ export type Work = {
   platform: string;
   stack: string[];
   liveUrl?: string;
+  liveLabel?: string;
   cta?: string;
   content: string;
   readingTime: number;
