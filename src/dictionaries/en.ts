@@ -25,6 +25,7 @@ const en = {
   cursor: {
     read: "read",
     open: "open",
+    zoom: "zoom",
   },
   common: {
     min: "min",

@@ -26,6 +26,7 @@ const zhTw: Dictionary = {
   cursor: {
     read: "閱讀",
     open: "開啟",
+    zoom: "放大",
   },
   common: {
     min: "分鐘",

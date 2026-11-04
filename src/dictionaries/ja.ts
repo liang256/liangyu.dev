@@ -27,6 +27,7 @@ const ja: Dictionary = {
   cursor: {
     read: "読む",
     open: "開く",
+    zoom: "拡大",
   },
   common: {
     min: "分",
